@@ -1,0 +1,201 @@
+@import "colors";
+@import "fonts";
+
+.big-button,
+.button {
+    display: block;
+
+    border: 2px solid $button-main;
+    background-color: $button-main;
+    border-radius: 8px;
+
+    transition: background-color .2s ease, border .2s ease;
+
+    color: $white;
+
+    &:hover {
+        background-color: $button-hover;
+        border: 2px solid $button-hover;
+    }
+
+    &:active {
+        background-color: $button-active;
+        border: 2px solid $button-active;
+    }
+
+    &.disable {
+        background-color: $button-disable;
+        border: 2px solid $button-disable;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    &.second {
+        background-color: $white;
+
+        border: 2px solid $button-main;
+        color: $button-main;
+
+        transition: border .2s ease, color .2s ease;
+
+        &:hover {
+            border: 2px solid $button-hover;
+            color: $button-hover;
+        }
+    
+        &:active {
+            border: 2px solid $button-active;
+            color: $button-active;
+        }
+    }
+
+    &.third {
+        background-color: $white;
+
+        border: 2px solid $stroke-light;
+        color: $main;
+
+        transition: border .2s ease, color .2s ease, background-color .2s ease;
+
+        &:hover {
+            background-color: $semitone-grey-light;
+        }
+    
+        &:active {
+            background-color: $stroke-light;
+        }
+    }
+}
+
+.big-button {
+    height: 56px;
+    padding: 16px 20px;
+
+    font-family: 'Gogh' !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+
+    @media (max-width: $desktop-small) {
+        min-width: 112px;
+
+        font-size: 14px !important;
+        line-height: 20px !important;
+    }
+}
+
+.button {
+    height: 44px;
+    padding: 12px 20px;
+
+    font-family: 'Gogh' !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+
+    @media (max-width: $desktop-small) {
+        font-size: 12px !important;
+        line-height: 18px !important;
+    }
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+
+    .quantity-input {
+        width: 68px !important;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        justify-content: center;
+
+        input {
+            border: none;
+            text-align: right;
+
+            padding: 0;
+    
+            width: 30px !important;
+    
+            &::placeholder {
+                @extend %body;
+                
+            }
+    
+            &:focus {
+                outline: none;
+                border: none;
+            }
+    
+            &:after {
+                content: "kg";
+                display: block;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &-minus, &-plus {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+
+        cursor: pointer;
+
+        &:before {
+            content: "";
+            width: 16px;
+            height: 16px;
+            display: block;
+            background-color: $white;
+        }
+    }
+
+    &-minus:before {
+        mask-image: url(../images/icon/minus.svg);
+    }
+
+    &-plus:before {
+        mask-image: url(../images/icon/plus.svg);
+    }
+
+    &.mini {
+        .quantity-minus:before, .quantity-plus:before {
+            width: 10px;
+            height: 10px;
+            background-color: $main;
+        }
+
+        .quantity-minus:before {
+            mask-image: url(../images/icon/minus-mini.svg);
+        }
+
+        .quantity-plus:before {
+            mask-image: url(../images/icon/plus-mini.svg);
+        }
+
+        .third {
+            border: 1px solid $stroke-light;
+            padding: 7px;
+            background-color: $semitone-grey-light;
+            width: 26px;
+            height: 26px;
+            border-radius: 4px;
+
+            &.disable {
+                opacity: 0.5;
+            }
+        }
+
+        .quantity-input {
+            width: 59px !important;
+
+            input {
+                @extend %caption;
+            }
+        }
+    }
+}

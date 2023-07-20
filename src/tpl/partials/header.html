@@ -1,0 +1,27 @@
+<header>
+    <div class="header-left">
+        <div class="burger" data-aside-toggler></div>
+        <div class="imgholder">
+            <a href="/"><img src="/assets/images/logo.png" alt=""></a>
+        </div>
+        <div class="exchange-rate">$1= 71.5763 ₽</div>
+    </div>
+    <div class="header-right">
+        <div class="coffee-verify">
+            <p>Coffee Verification</p>
+            <div class="notify">99+</div>
+        </div>
+        <div class="notifications" data-popup-opener="notify">
+            <p>Notifications</p>
+            <div class="notify">99</div>
+        </div>
+        <div class="personal" data-popup-opener="personal">
+            <div class="imgholder">
+                <img src="/assets/images/colibri.png" alt="">
+            </div>
+            <p>Hummingbird</p>
+        </div>
+    </div>
+    {{>notifications}}
+    {{>personal}}
+</header>

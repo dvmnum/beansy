@@ -1,0 +1,280 @@
+@import "breakpoints";
+@import "colors";
+
+@font-face {
+    font-family: 'Gogh';
+    src: url('../fonts/Gogh-Regular.woff2') format('woff2'),
+         url('../fonts/Gogh-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gogh';
+    src: url('../fonts/Gogh-Medium.woff2') format('woff2'),
+         url('../fonts/Gogh-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+h1,
+.h1,
+%h1 {
+    font-family: 'Gogh';
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 52px;
+
+    @media (max-width: $desktop-small) {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 32px;
+        line-height: 38px;
+    }
+}
+
+h2,
+.h2,
+%h2 {
+    font-family: 'Gogh';
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
+
+    @media (max-width: $desktop-small) {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+
+h3,
+.h3,
+%h3 {
+    font-family: 'Gogh';
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+
+    @media (max-width: $desktop-small) {
+        font-size: 26px;
+        line-height: 32px;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+h4,
+.h4,
+%h4 {
+    font-family: 'Gogh';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+
+    @media (max-width: $tablet) {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}
+
+h5,
+.h5,
+%h5 {
+    font-family: 'Gogh';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+
+    @media (max-width: $tablet) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+h6,
+.h6,
+%h6 {
+    font-family: 'Gogh';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+
+    @media (max-width: $tablet) {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.caption-header,
+%caption-header {
+    @extend %h6;
+    text-transform: uppercase;
+}
+
+.subtitle,
+%subtitle {
+    font-family: 'Gogh';
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    @media (max-width: $tablet) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
+
+.body-big,
+%body-big {
+    font-family: 'Gogh';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    @media (max-width: $desktop-small) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+.body-bold,
+%body-bold {
+    font-family: 'Gogh';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+
+    @media (max-width: $desktop-small) {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+.body,
+%body {
+    font-family: 'Gogh';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    @media (max-width: $desktop-small) {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+.caption,
+%caption {
+    font-family: 'Gogh';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+
+    @media (max-width: $desktop-small) {
+        font-size: 10px;
+        line-height: 16px;
+    }
+}
+
+.caption-bold,
+%caption-bold {
+    font-family: 'Gogh';
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+
+    @media (max-width: $desktop-small) {
+        font-size: 10px;
+        line-height: 16px;
+    }
+}
+
+.button-small,
+%button-small{
+    @extend %body;
+}
+
+.button-big,
+%button-big {
+    font-family: 'Gogh';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+
+    @media (max-width: $desktop-small) {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+b {
+    font-weight: 500;
+    font-size: unset;
+    line-height: unset;
+}
+
+.link {
+    display: inline;
+    color: $green;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.caption-link {
+    @extend %caption-header;
+
+    color: $green;
+
+    display: flex;
+    gap: 2px;
+    align-items: center;
+
+    &:before {
+        content: "";
+        width: 16px;
+        min-width: 16px;
+        height: 16px;
+        background: url(../images/icon/plus-green.svg) no-repeat;
+        background-size: contain;
+        transform: rotate(0);
+        transition: transform .2s ease;
+    }
+
+    &:hover:before {
+        transform: rotate(90deg);
+    }
+}
+
+.main-grid-header:has(.caption-link) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        margin-bottom: 0;
+    }
+
+    margin-bottom: 32px;
+
+    @media (max-width: $tablet) {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 24px;
+        align-items: flex-start;
+    }
+}

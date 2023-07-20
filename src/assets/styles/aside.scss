@@ -1,0 +1,463 @@
+@import "colors";
+@import "fonts";
+
+body:has(.aside-main) {
+    display: grid;
+    grid-template-columns: 24px 354px 1fr;
+    grid-template-rows: 96px 1fr;
+    grid-template-rows: fit-content 1fr fit-content;
+
+    transition: grid .2s ease;
+    height: 100vh;
+
+    &:before {
+        content: "";
+        width: 24px;
+        height: 100%;
+
+        grid-column: 1;
+        grid-row: 1 / 4;
+
+        background: url(../images/other/aside-flags.png) repeat;
+        background-size: contain;
+
+        @media (max-width: $tablet) {
+            display: none;
+        }
+    }
+
+    .aside-main {
+        grid-column: 2;
+        grid-row: 2 / 3;
+    }
+
+    header {
+        grid-column: 2 / 4;
+        grid-row: 1;
+    }
+
+    .main {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    footer {
+        grid-column: 2 / 4;
+        grid-row: 3;
+    }
+
+    &.aside-closed {
+        grid-template-columns: 24px 104px 1fr;
+    }
+
+    @media (max-width: 1620px) {
+        grid-template-columns: 24px 104px 1fr;
+
+        .aside-main {
+            // position: fixed;
+            background-color: $white;
+            // top: 96px;
+            // left: 24px;
+            width: 104px;
+
+            z-index: 4;
+            overflow: visible;
+
+            transition: width .2s ease;
+
+            .aside-content {
+                width: 80px;
+                overflow: hidden;
+
+                transition: width .2s ease;
+
+                @media (max-width: $tablet) {
+                    overflow: scroll;
+                }
+
+                .aside-content--inner {
+                    .aside-link {
+                        a p {
+                            width: 0;
+                            white-space: nowrap;
+
+                            transition: width .2s ease;
+                        }
+                    }
+
+                    .aside-spoiler div:after {
+                        opacity: 0;
+        
+                        transition: opacity .2s ease;
+                    }
+                } 
+            } 
+        }
+
+        &:not(.aside-closed) {
+            .aside-main {
+                width: 354px;
+
+                .aside-content  {
+                    width: 330px;
+
+                    .aside-content--inner {
+                        .aside-link {
+                            a p {
+                                width: unset;
+                            }
+                        }
+
+                        .aside-spoiler div:after {
+                            opacity: 1;
+                        }
+                    } 
+
+                    @media (max-width: $tablet) {
+                        width: 100%;
+
+                        ul li a,
+                        ul li div {
+                            padding: 12px;
+                        }
+
+                        ul li ul {
+                            padding: 0;
+                            gap: 0;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+
+    @media (max-width: $tablet) {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 48px 1fr;
+
+        header {
+            grid-column: 1 / 3;
+        }
+    
+        .main {
+            grid-column: 1 / 3;
+        }
+
+        footer {
+            grid-column: 1 / 3;
+        }
+
+        &:not(.aside-closed) {
+            .aside-main {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+                width: 100vw;
+
+                transform: translateX(0);
+
+                &:before {
+                    display: none;
+                }
+
+                .aside-header {
+                    grid-column: 1;
+                }
+
+                .aside-content {
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+            }
+        }
+
+        &.aside-closed {
+            .aside-main {
+                transform: translateX(-100vw);
+                transition: transform .2s ease;
+            }
+        }
+    }
+}
+
+.aside-main {
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    height: 100%;
+    width: 100%;
+
+    border-right: 1px solid $stroke-light;
+
+    @media (max-width: $tablet) {
+        grid-template-rows: 48px 1fr;
+    }
+
+    .aside-header {
+        padding: 32px 24px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        height: 96px;
+        width: 100%;
+
+        grid-column: 2;
+        grid-row: 1;
+
+        @media (max-width: $tablet) {
+            height: 48px;
+            border-bottom: 1px solid $stroke-light;
+        }
+
+        &.aside-closed {
+            .imgholder {
+                opacity: 0;
+            }
+
+            &+.aside-content {
+                .aside-content--inner {
+                    .aside-link>a,
+                    .aside-spoiler>div {
+                        padding: 12.5px 32px 12.5px 28px;
+
+                        p {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .burger {
+            width: 32px;
+            height: 32px;
+            display: block;
+
+            mask-image: url(../images/icon/burger-icon.svg);
+            background-color: $blue-dark;
+
+            cursor: pointer;
+
+            @media (max-width: $tablet) {
+                width: 24px;
+                height: 24px;
+                mask-image: url(../images/icon/burger-icon-mobile.svg);
+            }
+        }
+
+        .imgholder {
+            height: 32px;
+
+            transition: opacity .2s ease;
+
+            img {
+                height: 100%;
+                display: block;
+            }
+
+            @media (max-width: $tablet) {
+                height: 16px;
+            }
+        }
+
+        @media (max-width: $tablet) {
+            padding: 12px;
+        }
+    }
+
+    .aside-content {
+        grid-column: 2;
+        grid-row: 2;
+
+        &--inner {
+            display: flex;
+            flex-direction: column;
+
+            >li>a,
+            >li>div {
+                display: block;
+                padding: 12.5px 32px;
+            }
+
+            .aside-link > a p,
+            .aside-spoiler > div p {
+                @extend %h6;
+                color: $main;
+                text-decoration: none;
+
+                transition: opacity .2s ease;
+            }
+
+            >li {
+                position: relative;
+                cursor: pointer;
+                
+                >a .burger-icon,
+                >div .burger-icon {
+                    width: 24px;
+                    height: 24px;
+                    display: block;
+
+                    background-color: $main;
+
+                    transition: background-color .1s ease;
+                }
+
+                >a, >div {
+                    display: grid;
+                    grid-template-columns: 24px 1fr;
+                    gap: 12px;
+                    align-items: center;
+
+                    transition: color .1s ease, background-color .1s ease, padding .2s ease;
+
+                    &:hover {
+                        color: $green;
+
+                        p {
+                            color: $green;
+                        }
+
+                        .burger-icon,
+                        &:after {
+                            background-color: $green;
+                        }
+
+                        background-color: $semitone-green;
+                    }
+                }
+
+                &:after {
+                    content: "";
+                    width: 2px;
+                    height: 49px;
+                    display: block;
+
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+
+                    background-color: transparent;
+
+                    transition: background-color .2s ease;
+                }
+
+                &:has(div:hover) {
+                    &:after {
+                        background-color: $green;
+                    }
+                }
+            }
+
+            @for $i from 1 through 10 {
+                >li:nth-child(#{$i}) > a,
+                >li:nth-child(#{$i}) > div {
+                    .burger-icon {
+                        mask-image: url(../images/icon/burger#{$i}.svg);
+                    }
+                }
+            }
+
+            .aside-spoiler {
+                display: flex;
+                flex-direction: column;
+
+                div {
+                    grid-template-columns: 24px 1fr 16px;
+
+                    white-space: nowrap;
+
+                    &:not([class]):after {
+                        content: "";
+                        width: 16px;
+                        height: 16px;
+                        display: block;
+    
+                        mask-image: url(../images/icon/arrow-down.svg);
+                        background-color: $main;
+    
+                        transition: background-color .2s ease, transform .2s ease;
+                    }
+                }
+
+                &:hover {
+                    div:after {
+                        background-color: $green;
+                    }
+                }
+
+                &.opened {
+                    div:after {
+                        transform: scaleY(-1);
+                    }
+                }
+
+                &--content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 13px;
+
+                    padding: 0 32px;
+
+                    &.opened {
+                        padding: 3.5px 32px 12px 32px;
+                    }
+
+                    max-height: 0;
+                    overflow: hidden;
+
+                    transition: max-height .3s ease, transform .2s ease, padding .2s ease;
+                    
+                    li {
+                        @extend %body-big;
+                        padding-left: 36px;
+
+                        a {
+                            @extend %body-big;
+                            display: flex;
+                            gap: 4px;
+                            width: 100%;
+        
+                            color: $second;
+                            text-decoration: none;
+
+                            &:hover {
+                                color: $green;
+                            }
+                        }
+                    }
+
+                    &:has(.li-secondary) {
+                        li {
+                            color: $main;
+
+                            cursor:auto;
+                        }
+
+                        .li-secondary a {
+                            padding-left: 24px;
+                            color: $second;
+
+                            &:hover {
+                                color: $green;
+                            }
+                        }
+                    }
+
+                    .li-new a {
+                        width: fit-content;
+                        padding: 4px 16px;
+
+                        background-color: $semitone-green;
+                        border-radius: 16px;
+
+                        color: $green;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,121 @@
+@import "colors";
+@import "fonts";
+@import "breakpoints";
+@import "buttons";
+
+input {
+    padding: 10px 0 10px 8px;
+    background-color: $white;
+    border-radius: 8px;
+    border: 1px solid $stroke-light;
+
+    height: 40px;
+    width: 100%;
+
+    transition: border .2s ease;
+
+    &::placeholder {
+        @extend %body;
+
+        transition: color .2s ease;
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px solid $blue-light;
+
+        &::placeholder {
+            color: $stroke-light;
+        }
+    }
+
+    &:hover {
+        border: 1px solid $blue-light;
+    }
+
+    &[data-input] {
+        padding: 10px 0 10px 36px;
+    }
+}
+
+label {
+    @extend %caption-bold;
+}
+
+.date-picker {
+    position: relative;
+
+    [data-toggle] {
+        width: 20px;
+        height: 20px;
+        display: block;
+
+        position: absolute;
+
+        background-size: contain;
+
+        pointer-events: none;
+    }
+
+    [data-toggle]:nth-child(2) {
+        bottom: 10px;
+        left: 8px;
+
+        background: url(../images/icon/calendar.svg) no-repeat;
+    }
+
+    [data-toggle]:nth-child(3) {
+        bottom: 10px;
+        right: 8px;
+
+        transform: scaleY(1);
+
+        transition: transform .2s ease;
+
+        background: url(../images/icon/arrow-line-down-grey-20.svg) no-repeat;
+    }
+
+    input.active ~ [data-toggle]:nth-child(3) {
+        transform: scaleY(-1);
+    }
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    &[type=submit] {
+        width: fit-content;
+        margin-left: auto;
+    }
+}
+
+li:has(.password-show) {
+    position: relative;
+}
+
+.password-show {
+    position: absolute;
+    bottom: 11px;
+    right: 8px;
+
+    width: 18px;
+    height: 18px;
+    display: block;
+    
+    mask-image: url(../images/icon/show-pass.svg);
+    background-color: $second;
+
+    transition: background-color .2s ease;
+
+    &.toggle {
+        mask-image: url(../images/icon/hide-pass.svg);
+    }
+
+    &:active, &:hover {
+        background-color: $main;
+    }
+
+    cursor: pointer;
+}

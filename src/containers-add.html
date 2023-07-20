@@ -1,0 +1,142 @@
+---
+layout: aside
+title: Add new container
+---
+
+<div class="main">
+    <h1>Add new container</h1>
+    <div class="container">
+        <form class="container-add" action="">
+            <div class="container-add-section">
+                <h4>From</h4>
+                <ul>
+                    <li>
+                        <label>Страна</label>
+                        <input type="text" name="" id="" placeholder="Не указано" required>
+                    </li>
+                    <li>
+                        <label>Порт</label>
+                        <select name="" id="" class="choices">
+                            <option value="">Не указан</option>
+                            <option>Port 1</option>
+                            <option>Port 2</option>
+                            <option>Port 3</option>
+                            <option>Port 4</option>
+                        </select>                    
+                    </li>
+                    <li>
+                        <label>Booking</label>
+                        <input type="text" name="" id="" placeholder="Не указано" required>
+                    </li>
+                    <li>
+                        <label>Booking</label>
+                        <input type="text" name="" id="" placeholder="Не указано" required>
+                    </li>
+                    <li>
+                        <label>Тип контейнера</label>
+                        <select name="" id="" class="choices">
+                            <option value="">Не указан</option>
+                            <option>Port 1</option>
+                            <option>Port 2</option>
+                            <option>Port 3</option>
+                            <option>Port 4</option>
+                        </select>                       
+                    </li>
+                    <li>
+                        <label>Максимальная вместимость</label>
+                        <input type="text" name="" id="" placeholder="кг" required>
+                    </li>
+                    <li>
+                        <label>Экспортер</label>
+                        <select name="" id="" class="choices">
+                            <option value="">Не указан</option>
+                            <option>Port 1</option>
+                            <option>Port 2</option>
+                            <option>Port 3</option>
+                            <option>Port 4</option>
+                        </select>                       
+                    </li>
+                    <li>
+                        <ul class="container-add-dates">
+                            <li>
+                                <label>Дата закрытия заказа</label>
+                                <div class="date-picker">
+                                    <input data-input type="date" name="" id="" placeholder="дд.мм.гггг">
+                                    <div data-toggle></div>
+                                    <div data-toggle></div>
+                                </div>
+                            </li>
+                            <li>
+                                <label>Дата отправки</label>
+                                <div class="date-picker">
+                                    <input data-input type="date" name="" id="" placeholder="дд.мм.гггг">
+                                    <div data-toggle></div>
+                                    <div data-toggle></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="container-add-section">
+                <h4>To</h4>
+                <ul>
+                    <li>
+                        <label>Страна</label>
+                        <input type="text" name="" id="" placeholder="Не указано" required>
+                    </li>
+                    <li>
+                        <label>Порт</label>
+                        <select name="" id="" class="choices">
+                            <option value="">Не указан</option>
+                            <option>Port 1</option>
+                            <option>Port 2</option>
+                            <option>Port 3</option>
+                            <option>Port 4</option>
+                        </select>                       
+                    </li>
+                    <li>
+                        <label>Конечный пункт назначения</label>
+                        <input type="text" name="" id="" placeholder="Не указано" required>
+                    </li>
+                    <li>
+                        <label>Дата прибытия</label>
+                        <div class="date-picker">
+                            <input data-input type="date" name="" id="" placeholder="дд.мм.гггг">
+                            <div data-toggle></div>
+                            <div data-toggle></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="container-add-section">
+                <h4>Presets</h4>
+                <ul>
+                    <li>
+                        <label>Price Presets</label>
+                        <select name="" id="" class="choices">
+                            <option value="">Не указан</option>
+                            <option>Port 1</option>
+                            <option>Port 2</option>
+                            <option>Port 3</option>
+                            <!-- последний option - ссылка на страницу создания пресетов, ссылку писать в value -->
+                            <option data-custom-properties='{"check": "true"}' value="containers-add.html">Create a new preset</option>
+                        </select>                       
+                    </li>
+                    <li>
+                        <label>Shipping Preset</label>
+                        <select name="" id="" class="choices">
+                            <option value="">Не указан</option>
+                            <option>Port 1</option>
+                            <option>Port 2</option>
+                            <option>Port 3</option>
+                            <!-- последний option - ссылка на страницу создания пресетов, ссылку писать в value -->
+                            <option data-custom-properties='{"check": "true"}' value="containers-add.html">Create a new preset</option>
+                        </select>                       
+                    </li>
+                </ul>
+            </div>
+            <button type="submit" class="big-button">Open container</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,382 @@
+@import "colors";
+@import "fonts";
+@import "breakpoints";
+@import "buttons";
+
+.main.order-grid {
+    display: grid;
+    grid-template-columns: 1fr 378px;
+    grid-template-rows: max-content 1fr;
+    column-gap: 32px;
+
+    @media (max-width: $desktop-small) {
+        grid-template-columns: 1fr 338px;
+
+        &:has(.order-bg) {
+            .main-content {
+                grid-column: 1 / 3;
+            }
+        }
+    }
+
+    @media (max-width: $mobile) {
+        grid-template-columns: 1fr 1fr;  
+    }
+
+    h1, .main-grid-header {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+    
+    .main-content {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .order-list {
+        grid-column: 2;
+        grid-row: 2;
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        background-color: $white;
+        border-radius: 12px;
+        border: 1px solid $stroke-light;
+        padding: 20px;
+
+        height: fit-content;
+
+        @media (max-width: $desktop-small) {
+            height: 100%;
+
+            border-right: 0;
+            border-top: 0;
+            border-bottom: 0;
+            border-radius: 0;
+        }
+
+        @media (max-width: $tablet) {
+            padding: 16px 12px;
+        }
+
+        .order-mobile-close {
+            @media (min-width: $tablet) {
+                display: none;
+            }
+
+            position: absolute;
+            top: 18px;
+            right: 12px;
+            display: block;
+            width: 20px;
+            height: 20px;
+
+            mask-image: url(../images/icon/close-red.svg);
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            background-color: $red;
+        }
+
+        @media (max-width: $tablet) {
+            border-radius: 12px 12px 0 0;
+            width: 100vw;
+        }
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            @media (max-width: $tablet) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .order-list-clear {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                color: $second;
+
+                transition: color .2s ease;
+
+                &:after {
+                    content: "";
+                    width: 16px;
+                    height: 16px;
+                    min-width: 16px;
+                    display: block;
+
+                    mask-image: url(../images/icon/basket.svg);
+                    background-color: $second;
+
+                    transition: background-color .2s ease;
+                }
+
+                &:hover {
+                    color: $red;
+
+                    &:after {
+                        background-color: $red;
+                    }
+                }
+            } 
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            flex: 1 1 0;
+
+            li {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+
+                @media (max-width: $tablet) {
+                   justify-content: space-between;
+                }
+
+                >p {
+                    width: 123px;
+                    min-width: 123px;
+
+                    @media (max-width: $desktop-small) {
+                        width: 90px;
+                        min-width: 90px;
+                    }
+
+                    @media (max-width: $tablet) {
+                        width: unset;
+                        min-width: none;
+                    }
+
+                    @media (max-width: $mobile) {
+                        width: 123px;
+                        min-width: 123px;
+                    }
+                }
+
+                .order-list-item-info {
+                    display: flex;
+                    align-items: center;
+
+                    width: 207px;
+
+                    @media (max-width: $tablet) {
+                        width: 100%;
+                        max-width: 50%;  
+                    }
+
+                    @media (max-width: $mobile) {
+                        max-width: 66%;  
+                    }
+
+                    span {
+                        flex: 1 1 0;
+                        text-align: right;
+                    }
+
+                    .order-list-item-close {
+                        width: 16px;
+                        height: 16px;
+                        display: block;
+
+                        margin-left: 8px;
+
+                        mask-image: url(../images/icon/close-16.svg);
+                        background-color: $second;
+    
+                        transition: background-color .2s ease;
+    
+                        cursor: pointer;
+    
+                        &:hover {
+                            background-color: $red;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-footer {
+            display: flex;
+            flex-direction: column;
+
+            &-text {
+                display: flex;
+                align-items: flex-end;
+                gap: 8px;
+
+                >*:first-child {
+                    flex: 1 1 0;
+                }
+
+                >*:nth-child(2) {
+                    color: $second;
+                }
+            }
+
+            .big-button {
+                text-align: center;
+            }
+
+            .order-list-footer-text + .big-button {
+                margin-top: 16px;
+            }
+
+            .order-list-footer-text + .order-list-footer-text {
+                margin-top: 4px;
+
+                >*:nth-child(1) {
+                    color: $second;
+                }
+            }
+        }
+
+        &-select {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            
+            .choices {
+                height: 40px;
+
+                .choices__inner {
+                    padding: 10px 8px !important;
+                }
+
+                &:after {
+                    right: 8px !important;
+                }
+            }
+        }
+
+        &.empty {
+            height: 478px;
+
+            .order-list-content {
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+
+                height: 240px;
+                margin: 60px 0 20px 0;
+                background: url(../images/icon/empty-basket.svg) no-repeat;
+                background-position: 50% top;
+
+                p {
+                    width: 100%;
+                    text-align: center;
+                    color: $second;
+                }
+            }
+        }
+
+        &.pressed {
+            height: 478px;
+
+            .order-list-content {
+                p a {
+                    color: $green;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.order-bg {
+    @media (max-width: $desktop-small) {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        height: 100vh;
+
+        transform: translateX(100%);
+
+        transition: transform .2s ease;
+
+        z-index: 12;
+
+        &.active {
+            transform: translateX(0);
+        }
+    }
+
+    @media (max-width: $tablet) {
+        position: fixed;
+        top: unset;
+        bottom: 0;
+        right: 0;
+        height: unset;
+
+        transform: unset;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height .2s ease;
+
+        &.active {
+            transform: unset;
+        }
+    }
+}
+
+.order-mobile-btn {
+    display: flex !important;
+    justify-content: center;
+    align-items: flex-end;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 305px;
+
+    @media (min-width: $desktop-small) {
+        display: none !important;
+    }
+
+    @media (max-width: $tablet) {
+        bottom: 16px;
+        right: 12px;
+        width: calc(100vw - 24px);
+    }
+    
+    .cart-icon {
+        width: 20px;
+        height: 20px;
+        display: block;
+        
+        mask-image: url(../images/icon/cart.svg);
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        background-color: $white;
+    }
+
+    .cart-counter {
+        margin-inline: 12px;
+    }
+
+    .cart-counter, .currency-ruble {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .currency-dollar {
+        margin-left: 4px;
+
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
