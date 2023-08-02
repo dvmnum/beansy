@@ -5,6 +5,7 @@ import Dropzone from 'dropzone'
 document.addEventListener('DOMContentLoaded', () => {
     personalHeight()
     initTogglers()
+    initFilterTogglers()
     initTableTogglers()
     initBurger()
     initChooses()
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initInputsWrite()
     initOrderFixed()
     initDropZones()
+    rangeInput()
 })
 
 const body = document.querySelector('body')
@@ -87,9 +89,7 @@ function initChoicesLinks() {
 }
 
 function initFlatpickr() {
-    // flatpickr(".date-picker", {});
-    flatpickr(".date-picker", {
-        
+    flatpickr(".date-picker", { 
         wrap: true,
         dateFormat: "d.m.Y",
         disableMobile: "true",
@@ -107,33 +107,26 @@ function personalHeight() {
 function initChooses() {
     let chooses = document.querySelectorAll('.radio-choose')
 
-    if (chooses) {
-        chooses.forEach(x => {
-            let items = x.querySelectorAll('li')
+    if (!chooses) return
+    
+    chooses.forEach(x => {
+        let items = x.querySelectorAll('li')
+        let marker = x.querySelector('#marker')
 
-            items.forEach(item => item.addEventListener('click', () => {
-                currentItem = item
-                items.forEach(x => x.classList.remove('active'))
-                currentItem.classList.add('active')
-            }))
+        marker.style.left = x.querySelector('li.active').offsetLeft+'px';
+        marker.style.width = x.querySelector('li.active').offsetWidth+'px';
 
-            let marker = x.querySelector('#marker')
+        function indicator(target) {
+            marker.style.left = target.offsetLeft+'px';
+            marker.style.width = target.offsetWidth+'px';
+        }
 
-            marker.style.left = x.querySelector('li.active').offsetLeft+'px';
-            marker.style.width = x.querySelector('li.active').offsetWidth+'px';
-
-            function indicator(e) {
-                marker.style.left = e.offsetLeft+'px';
-                marker.style.width = e.offsetWidth+'px';
-            }
-
-            items.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    indicator(e.target)
-                })
-            })
-        })
-    }
+        items.forEach(item => item.addEventListener('click', (e) => {
+            items.forEach(x => x.classList.remove('active'))
+            item.classList.add('active')
+            indicator(item)
+        }))
+    })
 }
 
 function popups() {
@@ -211,6 +204,21 @@ function initTogglers() {
     }
 }
 
+function initFilterTogglers() {
+    let overflow = document.querySelectorAll('.overflow-block')
+
+    if (!overflow) return
+
+    overflow.forEach(x => {
+        let toggler = x.nextElementSibling
+
+        toggler.addEventListener('click', () => {
+            x.classList.toggle('opened')
+            toggler.classList.toggle('opened')
+        })
+    })
+}
+
 // открывашка инфы в таблице
 function initTableTogglers() {
     let togglers = document.querySelectorAll('[data-table-toggler]')
@@ -224,10 +232,15 @@ function initTableTogglers() {
 
                 x.classList.toggle('opened')
                 par.classList.toggle('opened')
+                console.log('1')
 
                 if (content.style.maxHeight) {
                     content.style.maxHeight = null;
                 } else (content.style.maxHeight = content.scrollHeight + 'px')
+
+                if (par.closest('[data-table-content]')) {
+                    par.closest('[data-table-content]').style.maxHeight = par.closest('[data-table-content]').scrollHeight + content.scrollHeight + 'px'
+                }
             }))
         } else if (togglers && window.screen.width <= 768) {
             // меняем скрипт на мобиле
@@ -238,12 +251,18 @@ function initTableTogglers() {
 
                 x.classList.toggle('opened')
                 par.classList.toggle('opened')
-                shade.classList.toggle('active')
-                body.classList.toggle('fixed')
+                shade.classList.add('active')
+                body.classList.add('fixed')
 
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                } else (content.style.maxHeight = 'calc(100vh - 200px)')
+                if (!par.closest('[data-table-content]')) {
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else (content.style.maxHeight = 'calc(100vh - 200px)')
+                } else {
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else (content.style.maxHeight = content.scrollHeight + 'px')
+                }
 
                 // функция закрытия попапа с инфой
                 function closePopup() {
@@ -459,26 +478,53 @@ function initPasswords() {
 }
 
 function initInputsWrite() {
-    let holders = document.querySelectorAll('.write-input-holder')
+    let holders = document.querySelectorAll('.write-input-form')
 
     if (!holders) return
 
-    holders.forEach(x => {
-        let toggler = x.querySelector('.input-readonly-write')
-        let input = x.querySelector('input')
+    holders.forEach(holder => {
+        let toggler = holder.querySelector('.input-readonly-write')
+        let input = holder.querySelector('input')
+        // let oldWidth = input.getAttribute('size')
 
+        holder.setAttribute('data-input', input.value)
+        
         toggler.addEventListener('click', () => {
-            toggler.classList.toggle('active')
+            toggler.classList.add('active')
 
             if (input.hasAttribute('readonly')) {
                 input.removeAttribute('readonly')
                 input.focus()
             } else {
-                input.setAttribute('readonly')
+                toggler.classList.remove('active')
+                input.setAttribute('readonly', 'readonly')
             }
-            
+        })
+        
+        input.addEventListener('mouseenter', () => {
+            if (input.getAttribute('size') == input.value.length) {
+                holder.classList.add('full')
+            }
+        })
+
+        input.addEventListener('mouseleave', () => {
+            if (input.getAttribute('size') == input.value.length) {
+                holder.classList.remove('full')
+            }
+        })
+
+        document.addEventListener('click', function closeWrites(e) {
+            const clickInside = e.composedPath().includes(holder)
+
+            if (!clickInside) {
+                toggler.classList.remove('active')
+                input.setAttribute('readonly', 'readonly')
+                holder.setAttribute('data-input', input.value)
+            }
         })
     })
+
+
 }
 
 function initOrderFixed() {
@@ -541,11 +587,91 @@ function initOrderFixed() {
 }
 
 function initDropZones() {
-        
+    if (!document.querySelector('#uploadImage')) return
+
     var myDropzone = new Dropzone("#uploadImage", {
         url: "/",
         createImageThumbnails: false,
+        addRemoveLinks: true,
+        dictRemoveFile: "",
+        dictCancelUpload: "",
     });
 
     document.querySelector('button.dz-button').innerHTML = '<span class="green">Add file</span> or drop file here'
+}
+
+function rangeInput() {
+    let rangeSliders = document.querySelectorAll('.price-choose')
+
+    rangeSliders.forEach(x => {
+        window.addEventListener('load', function(){
+            slideOne();
+            slideTwo();
+        })
+
+        let minimum = x.querySelector('.price-choose-inputs').getAttribute('data-min')
+        let maximum = x.querySelector('.price-choose-inputs').getAttribute('data-max')
+        let percentage = maximum / 100
+        
+        let sliderOne = x.querySelector('.range-from')
+        let sliderTwo = x.querySelector('.range-to')
+        let firstInput = x.querySelector('.value-from')
+        let secondInput = x.querySelector('.value-to')
+        let minGap = 1
+        let sliderTrack = x.querySelector(".slider-track")
+        let sliderMaxValue = x.querySelector('.range-from').max
+        let percent1, percent2
+        
+        function slideOne(){
+            if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
+                sliderOne.value = parseInt(sliderTwo.value) - minGap;
+            }
+            firstInput.value = sliderOne.value * percentage;
+            fillColor();
+        }
+        function slideTwo(){
+            if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
+                sliderTwo.value = parseInt(sliderOne.value) + minGap;
+            }
+            secondInput.value = sliderTwo.value * percentage;
+            fillColor();
+        }
+        function fillColor(){
+            percent1 = (sliderOne.value / sliderMaxValue) * 100;
+            percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+            sliderTrack.style.background = `linear-gradient(to right, #E9F7EE ${percent1}% , #23AF53 ${percent1}% , #23AF53 ${percent2}%, #E9F7EE ${percent2}%)`;
+        }
+
+        sliderOne.value = firstInput.value / percentage
+        sliderTwo.value = secondInput.value / percentage
+
+        sliderOne.oninput = () => slideOne()
+        sliderTwo.oninput = () => slideTwo()
+
+        firstInput.onchange = () => {
+            if (parseInt(firstInput.value) < parseInt(secondInput.value) && parseInt(firstInput.value) >= parseInt(minimum)) {
+                sliderOne.value = firstInput.value / percentage
+            } else if (parseInt(firstInput.value) >= parseInt(secondInput.value) && parseInt(firstInput.value) >= parseInt(minimum)) {
+                firstInput.value = parseInt(secondInput.value) - parseInt(minGap * percentage)
+                sliderOne.value = (secondInput.value / percentage) - minGap
+            } else {
+                firstInput.value = minimum
+                sliderOne.value = minimum / percentage
+            }
+            fillColor()
+        }
+
+        secondInput.onchange = () => {
+            if (parseInt(secondInput.value) > parseInt(firstInput.value) && parseInt(secondInput.value) <= parseInt(maximum)) {
+                sliderTwo.value = secondInput.value / percentage
+            } else if (parseInt(secondInput.value) <= parseInt(firstInput.value) && parseInt(secondInput.value) <= parseInt(maximum)) {
+                secondInput.value = parseInt(firstInput.value) + parseInt(minGap * percentage)
+                sliderTwo.value = (firstInput.value / percentage) + minGap
+            } else {
+                secondInput.value = maximum
+                sliderTwo.value = maximum / percentage
+            }
+            fillColor()
+        }
+    })
 }

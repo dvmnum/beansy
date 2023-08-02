@@ -1018,14 +1018,19 @@ title: Container-Detail Main
                 </li>
                 <li>
                     <p class="body">Booking</p>
-                    <div class="write-input-holder">
-                        <input class="input-readonly" type="text" value="2353452" size="6" readonly contenteditable="true">
+                    <form class="write-input-form" data-input="">
+                        <!-- если в инпуте значение больше сайза под ним будет вспывать подсказка -->
+                        <input class="input-readonly" type="text" value="2353452" size="7" readonly="readonly">
                         <div class="input-readonly-write"></div>
-                    </div>
+                    </form>
                 </li>
                 <li>
                     <p class="body">Container number</p>
-                    <p class="body-big">123891203</p>
+                    <form class="write-input-form" data-input="">
+                        <!-- если в инпуте значение больше сайза под ним будет вспывать подсказка -->
+                        <input class="input-readonly" type="text" value="123891203" size="9" readonly="readonly">
+                        <div class="input-readonly-write"></div>
+                    </form>
                 </li>
                 <li>
                     <p class="body">Net weight</p>

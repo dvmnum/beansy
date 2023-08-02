@@ -1,22 +1,59 @@
 ---
 layout: aside
-title: Sell coffee - Producer
+title: Beansy Cloud - Producer
 ---
 
 <div class="main order-grid">
     <div class="main-grid-header">
-        <h1>Sell coffee</h1>
+        <ul class="meta-info-blocks">
+            <li>
+                <p class="subtitle">Overall balance</p>
+                <p class="h2">249 000 ₽</p>
+                <p class="body-big">$ 13 000</p>
+            </li>
+            <li>
+                <p class="subtitle">Reserved</p>
+                <p class="h2">$ 19 500</p>
+                <p class="body-big">70 000 ₽</p>
+            </li>
+            <li>
+                <p class="subtitle">Available funds</p>
+                <p class="h2">$ 3 000</p>
+                <p class="body-big">70 000 ₽</p>
+                <div class="button">Replenish</div>
+            </li>
+        </ul>
+        <h1>Beansy Cloud</h1>
         <ul class="radio-choose">
             <div id="marker"></div>
-            <li class="active"><a href="">Producer</a></li>
-            <li><a href="">Transit</a></li>
-            <li><a href="">SPOT</a></li>
-            <li><a href="">Local office</a></li>
-            <li><a href="">Local samples</a></li>
+            <li class="production">
+                <a href="">
+                    <p class="caption-header">Production</p>
+                    <div class="notify">99</div>
+                </a>
+            </li>
+            <li class="spot">
+                <a href="">
+                    <p class="caption-header">SPOT</p>
+                    <div class="notify">99+</div>
+                </a>
+            </li>
+            <li class="transit">
+                <a href="">
+                    <p class="caption-header">Transit</p>
+                    <div class="notify">5</div>
+                </a>
+            </li>
+            <li class="producer active">
+                <a href="">
+                    <p class="caption-header">Producer</p>
+                    <div class="notify">99+</div>
+                </a>
+            </li>
         </ul>
     </div>
     <div class="main-content">
-        {{>input-wrapper}}
+        {{>input-wrapper-cloud}}
         <table class="table-big table-buy">
             <tr>
                 <th>Lot Name</th>

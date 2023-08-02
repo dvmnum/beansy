@@ -143,6 +143,66 @@
                    justify-content: space-between;
                 }
 
+                label:has(.choices) {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    width: 100%;
+
+                    .choices {
+                        height: 40px;
+                        border: 1px solid $stroke-light;
+
+                        >.choices__inner {
+                            padding: 10px 8px !important;
+                            min-height: unset;
+                            height: 38px;
+
+                            >.choices__list {
+                                .choices__item {
+                                    font-size: 14px;
+                                    line-height: 20px;
+                                    font-weight: 400;
+                                }
+                            }
+                        }
+
+                        >.choices__list {
+                            border-right: 1px solid $blue-light !important;
+                            border-bottom: 1px solid $blue-light !important;
+                            border-left: 1px solid $blue-light !important;
+                            width: calc(100% + 2px);
+                            left: -1px !important;
+                        }
+
+                        &:after {
+                            width: 20px !important;
+                            height: 20px !important;
+                            right: 8px !important;
+                            margin-top: -10px !important;
+                        }
+
+                        &:hover, &.is-open {
+                            border: 1px solid $blue-light;
+                        }
+
+                        &.is-flipped {
+                            >.choices__list {
+                                border-top: 1px solid $blue-light !important;
+                                border-bottom: 0 !important;
+                                border-radius: 8px 8px 0 0 !important;
+                            }
+
+                            &.is-open {
+                                border-radius: 0 0 8px 8px !important;
+                                border-bottom: 1px solid $blue-light !important;
+                                border-top: 0 !important;
+                            }
+                        }
+                    }
+                }
+
                 >p {
                     width: 123px;
                     min-width: 123px;
@@ -220,6 +280,10 @@
 
                 >*:nth-child(2) {
                     color: $second;
+                }
+
+                &:nth-child(n + 2) {
+                    
                 }
             }
 

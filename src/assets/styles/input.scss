@@ -36,6 +36,45 @@ input {
     &[data-input] {
         padding: 10px 0 10px 36px;
     }
+
+    // &[data-symbol] {
+    //     position: relative;
+    //     &:before {
+    //         content: '1';
+    //         position: absolute
+    //     }
+    // }
+}
+
+[data-symbol] {
+    position: relative;
+
+    &:before {
+        content: attr(data-symbol);
+        position: absolute;
+        top: 50%;
+        left: 9px;
+
+        transform: translateY(-50%);
+
+        color: $second;
+    }
+
+    input {
+        padding-left: 20px;
+    }
+
+    &:has(input:focus) {
+        &:before {
+            color: $main; 
+        }
+    }
+}
+
+.input-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 label {
@@ -118,4 +157,258 @@ li:has(.password-show) {
     }
 
     cursor: pointer;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    appearance: 0;
+    display: block;
+}
+
+label:has(input[type='radio']) {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    &:before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        display: block;
+        border-radius: 50%;
+        border: 2px solid $stroke-light;
+        
+        margin-right: 8px;
+
+        transition: border .2s ease;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 6px;
+
+        width: 12px;
+        height: 12px;
+        min-width: 12px;
+        display: block;
+        border-radius: 50%;
+        background-color: transparent;
+
+        transition: background-color .2s ease;
+    }
+
+    &.small {
+        &:before {
+            width: 16px;
+            height: 16px;
+            min-width: 16px;
+        }
+
+        &:after {
+            top: 50%;
+            transform: translateY(-50%);
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            min-width: 8px;
+        }
+    }
+
+    &:hover {
+        &:before {
+            border: 2px solid $green;
+        }
+    }
+
+    &:has(input:checked) {
+        &:before {
+            border: 2px solid $green;
+        }
+        &:after {
+            background-color: $green;
+        }
+    }
+}
+
+label:has(input[type='checkbox']) {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+
+    cursor: pointer;
+
+    &:before {
+        content: "";
+        width: 24px;
+        height: 24px;
+        min-width: 24px;
+        display: block;
+        border-radius: 8px;
+        border: 2px solid $stroke-light;
+        
+        margin-right: 8px;
+
+        transition: border .2s ease;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        display: block;
+        border-radius: 8px;
+
+        mask-image: url(../images/icon/check.svg);
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        background-color: transparent;
+
+        transition: background-color .2s ease;
+    }
+
+    &.small {
+        align-items: center;
+
+        &:before {
+            width: 16px;
+            height: 16px;
+            min-width: 16px;
+            border-radius: 4px;
+        }
+
+        &:after {
+            top: 4px;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            min-width: 16px;
+            border-radius: 4px;
+        }
+    }
+
+    &:hover {
+        &:before {
+            border: 2px solid $green;
+        }
+    }
+
+    &:has(input:checked) {
+        &:before {
+            border: 2px solid transparent;
+            background-color: $green;
+        }
+        &:after {
+            background-color: $white;
+        }
+    }
+
+    &:has(input[type='text']) {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+
+        &:not(:has(input[type='checkbox']:checked)) {
+            input[type='text'] {
+                user-select: none;
+                opacity: .5;
+                pointer-events: none;
+            }
+        }
+
+        p {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        input[type='text'] {
+            margin-top: 8px;
+            grid-column: 1 / 3;
+            grid-row: 2;
+            padding: 10px 8px;
+        }
+    }
+}
+
+.shipping-radio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+
+    margin-top: 32px;
+
+    @media (max-width: $tablet) {
+        grid-template-columns: 1fr;
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        h4, .h4 {
+            margin-bottom: 0;
+        }
+
+        ul {
+            margin-top: 0;
+            display: flex;
+            gap: 32px;
+
+            @media (max-width: $tablet) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        &:nth-child(3) {
+            grid-column: 1 / 3;
+
+            @media (max-width: $tablet) {
+                grid-column: 1;
+            }
+
+            ul {
+                max-height: 192px;
+                display: flex;
+                flex-direction: column;
+                gap: 16px 32px;
+                flex-wrap: wrap;
+
+                @media (max-width: 1000px) {
+                    max-height: 280px;
+                }
+
+                @media (max-width: $tablet) {
+                    max-height: unset;
+                    gap: 12px;
+                    flex-wrap: nowrap;
+                }
+
+                li {
+                    width: calc((100% - 64px) / 3);
+
+                    @media (max-width: 1000px) {
+                        width: calc((100% - 32px) / 2);
+                    }
+
+                    @media (max-width: $tablet) {
+                        width: 100%;
+                    }
+                }
+            }
+            
+        }
+    }
 }

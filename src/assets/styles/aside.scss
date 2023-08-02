@@ -3,7 +3,7 @@
 
 body:has(.aside-main) {
     display: grid;
-    grid-template-columns: 24px 354px 1fr;
+    grid-template-columns: 24px 330px 1fr;
     grid-template-rows: 96px 1fr;
     grid-template-rows: fit-content 1fr fit-content;
 
@@ -47,18 +47,37 @@ body:has(.aside-main) {
     }
 
     &.aside-closed {
-        grid-template-columns: 24px 104px 1fr;
+        grid-template-columns: 24px 80px 1fr;
+
+        .aside-main {
+            .aside-content {
+                .aside-content--inner {
+                    li {
+                        a,
+                        div {
+                            display: flex;
+                            justify-content: center;
+                            padding-inline: 0;
+    
+                            >p {
+                                display: none;
+                            }
+
+                            &:after {
+                                display: none;
+                            }
+                        } 
+                    } 
+                }
+            }
+        }
     }
 
     @media (max-width: 1620px) {
-        grid-template-columns: 24px 104px 1fr;
+        grid-template-columns: 24px 80px 1fr;
 
         .aside-main {
-            // position: fixed;
             background-color: $white;
-            // top: 96px;
-            // left: 24px;
-            width: 104px;
 
             z-index: 4;
             overflow: visible;
@@ -79,9 +98,7 @@ body:has(.aside-main) {
                     .aside-link {
                         a p {
                             width: 0;
-                            white-space: nowrap;
 
-                            transition: width .2s ease;
                         }
                     }
 
@@ -96,7 +113,7 @@ body:has(.aside-main) {
 
         &:not(.aside-closed) {
             .aside-main {
-                width: 354px;
+                width: 330px;
 
                 .aside-content  {
                     width: 330px;
@@ -191,86 +208,9 @@ body:has(.aside-main) {
 
     border-right: 1px solid $stroke-light;
 
-    @media (max-width: $tablet) {
-        grid-template-rows: 48px 1fr;
-    }
-
-    .aside-header {
-        padding: 32px 24px;
-        display: flex;
-        gap: 12px;
-        align-items: center;
-
-        height: 96px;
-        width: 100%;
-
-        grid-column: 2;
-        grid-row: 1;
-
-        @media (max-width: $tablet) {
-            height: 48px;
-            border-bottom: 1px solid $stroke-light;
-        }
-
-        &.aside-closed {
-            .imgholder {
-                opacity: 0;
-            }
-
-            &+.aside-content {
-                .aside-content--inner {
-                    .aside-link>a,
-                    .aside-spoiler>div {
-                        padding: 12.5px 32px 12.5px 28px;
-
-                        p {
-                            opacity: 0;
-                        }
-                    }
-                }
-            }
-        }
-
-        .burger {
-            width: 32px;
-            height: 32px;
-            display: block;
-
-            mask-image: url(../images/icon/burger-icon.svg);
-            background-color: $blue-dark;
-
-            cursor: pointer;
-
-            @media (max-width: $tablet) {
-                width: 24px;
-                height: 24px;
-                mask-image: url(../images/icon/burger-icon-mobile.svg);
-            }
-        }
-
-        .imgholder {
-            height: 32px;
-
-            transition: opacity .2s ease;
-
-            img {
-                height: 100%;
-                display: block;
-            }
-
-            @media (max-width: $tablet) {
-                height: 16px;
-            }
-        }
-
-        @media (max-width: $tablet) {
-            padding: 12px;
-        }
-    }
-
     .aside-content {
-        grid-column: 2;
-        grid-row: 2;
+        // grid-column: 2;
+        // grid-row: 2;
 
         &--inner {
             display: flex;
@@ -278,7 +218,6 @@ body:has(.aside-main) {
 
             >li>a,
             >li>div {
-                display: block;
                 padding: 12.5px 32px;
             }
 
@@ -288,7 +227,9 @@ body:has(.aside-main) {
                 color: $main;
                 text-decoration: none;
 
-                transition: opacity .2s ease;
+                white-space: nowrap;
+
+                transition: all .2s ease;
             }
 
             >li {
@@ -298,6 +239,7 @@ body:has(.aside-main) {
                 >a .burger-icon,
                 >div .burger-icon {
                     width: 24px;
+                    min-width: 24px;
                     height: 24px;
                     display: block;
 
@@ -333,7 +275,7 @@ body:has(.aside-main) {
                 &:after {
                     content: "";
                     width: 2px;
-                    height: 49px;
+                    height: 51px;
                     display: block;
 
                     position: absolute;
