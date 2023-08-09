@@ -42,6 +42,34 @@
         }
     }
 
+    &:has(.filter-button, .sort-button, .choices, form) {
+
+
+        @media (max-width: 1000px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            .choices {
+                grid-column: 1 / 4;
+                grid-row: 2;
+                width: 100%;
+                max-width: unset;
+            }
+        }
+
+        @media (max-width: $tablet) {
+            display: grid;
+            grid-template-columns: 1fr 48px 48px;
+            
+            .choices {
+                grid-column: 1 / 4;
+                grid-row: 2;
+                width: 100%;
+                max-width: unset;
+            }
+        }
+    }
+
     form {
         position: relative;
 
@@ -55,6 +83,10 @@
         @media (max-width: $desktop-small) {
             max-width: unset;
         }
+    }
+
+    @media (max-width: $desktop-small) {
+        gap: 16px;
     }
 
     @media(max-width: $mobile) {
@@ -150,6 +182,7 @@
         font-size: 18px;
         line-height: 16px;
         color: $second;
+        white-space: nowrap;
 
         @media (max-width: $tablet) {
             display: none;
