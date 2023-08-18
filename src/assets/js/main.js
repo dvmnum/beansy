@@ -3,15 +3,16 @@
 import Dropzone from 'dropzone'
 
 document.addEventListener('DOMContentLoaded', () => {
-    personalHeight()
+    setBodyParams()
     initTogglers()
     initFilterTogglers()
     initTableTogglers()
     initBurger()
     initChooses()
-    popups()
+    initPopups()
+    initNotifications()
     initChoices()
-    importerClicks()
+    initImporterClicks()
     initChoicesLinks()
     initQuantity()
     initProgressBars()
@@ -21,10 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
     initInputsWrite()
     initOrderFixed()
     initDropZones()
-    rangeInput()
+    initRangeInput()
+    initDashboardCharts()
+    onScrollHandler()
+    initNotifySlider()
 })
 
 const body = document.querySelector('body')
+const shade = document.querySelector('.shade')
 window.initChoices = initChoices
 
 function initChoices() {
@@ -89,18 +94,26 @@ function initChoicesLinks() {
 }
 
 function initFlatpickr() {
-    flatpickr(".date-picker", { 
-        wrap: true,
-        dateFormat: "d.m.Y",
-        disableMobile: "true",
-        "locale": {
-            "firstDayOfWeek": 1
-        },
-    });
+    if (document.querySelector('.date-picker')) {
+        flatpickr(".date-picker", { 
+            wrap: true,
+            dateFormat: "d.m.Y",
+            disableMobile: "true",
+            "locale": {
+                "firstDayOfWeek": 1
+            },
+        });
+    }
 }
 
-function personalHeight() {
-    const personal = document.querySelector('.personal-opened')
+function setBodyParams() {
+    let personal = document.querySelector('.personal-opened')
+
+    if (!personal) return
+
+    let header = document.querySelector('header')
+
+    body.style.setProperty('--header-height', header.scrollHeight + 'px');
     body.style.setProperty('--personal-height', personal.scrollHeight + 'px');
 }
 
@@ -129,11 +142,13 @@ function initChooses() {
     })
 }
 
-function popups() {
+function initPopups() {
     let openers = document.querySelectorAll('[data-popup-opener]')
+
+    if (!openers) return
+
     let closers = document.querySelectorAll('[data-popup-closer]')
     let allOpenedPopups = document.querySelectorAll('.opened[data-popup-content]')
-    let shade = document.querySelector('.shade')
 
     function closePopups() {
         allOpenedPopups.forEach(x => x.classList.remove('opened'))
@@ -155,8 +170,8 @@ function popups() {
         let target = x.dataset.popupOpener;
         let popup = document.querySelector(`[data-popup-content="${target}"]`)
 
-        x.classList.add('active')
-        popup.classList.add('opened')
+        x.classList.toggle('active')
+        popup.classList.toggle('opened')
         body.classList.toggle('fixed')
 
         if(x.hasAttribute('data-shade')) {
@@ -190,18 +205,22 @@ function popups() {
 function initTogglers() {
     let togglers = document.querySelectorAll('[data-toggler]')
 
-    if (togglers) {
-        togglers.forEach(x => x.addEventListener('click', () => {
-            let content = x.querySelector('[data-content]')
-            
-            x.classList.toggle('opened')
-            content.classList.toggle('opened')
+    if (!togglers) return
 
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else (content.style.maxHeight = content.scrollHeight + 'px')
-        }))
-    }
+    togglers.forEach(x => x.addEventListener('click', () => {
+        let content = x.querySelector('[data-content]')
+        
+        x.classList.toggle('opened')
+        content.classList.toggle('opened')
+
+        if (x.hasAttribute('data-shade') && window.screen.width < 768) {
+            shade.classList.toggle('active')
+        }
+
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else (content.style.maxHeight = content.scrollHeight + 'px')
+    }))
 }
 
 function initFilterTogglers() {
@@ -222,10 +241,11 @@ function initFilterTogglers() {
 // открывашка инфы в таблице
 function initTableTogglers() {
     let togglers = document.querySelectorAll('[data-table-toggler]')
-    let shade = document.querySelector('.shade')
+
+    if (!togglers) return
 
     function initTableTogglersInit() {
-        if (togglers && window.screen.width > 768) {
+        if (window.screen.width > 768) {
             togglers.forEach(x => x.addEventListener('click', () => {
                 let par = x.closest('[data-toggle]')
                 let content = par.querySelector('[data-table-content]')
@@ -242,7 +262,7 @@ function initTableTogglers() {
                     par.closest('[data-table-content]').style.maxHeight = par.closest('[data-table-content]').scrollHeight + content.scrollHeight + 'px'
                 }
             }))
-        } else if (togglers && window.screen.width <= 768) {
+        } else if (window.screen.width <= 768) {
             // меняем скрипт на мобиле
             togglers.forEach(x => x.addEventListener('click', () => {
                 let par = x.closest('[data-toggle]')
@@ -277,9 +297,11 @@ function initTableTogglers() {
                     closePopup()
                 })
 
-                closer.addEventListener('click', () => {
-                    closePopup()
-                })
+                if (closer) {
+                    closer.addEventListener('click', () => {
+                        closePopup()
+                    })
+                }
             }))
         }      
     }
@@ -332,6 +354,43 @@ function initBurger() {
         } else {
             document.querySelectorAll('[data-aside-content]').forEach(x => 
                 x.classList.add('aside-closed'))
+        }
+    })
+}
+
+function initNotifications() {
+    let opener = document.querySelector('[data-notifications-opener]')
+    let popup = document.querySelector('[data-notifications-popup]')
+
+    if (opener) {
+        opener.addEventListener('click', (e) => {
+            e.stopPropagation()
+            body.classList.toggle('notify-opened')
+    
+            document.addEventListener('click', e => {
+                if (!body.classList.contains('dashboard-page')) {
+        
+                    let clickInside = e.composedPath().includes(popup)
+        
+                    if (!clickInside) {
+                        body.classList.remove('notify-opened')
+                    }
+                }
+            })
+        })
+    }
+
+    if (window.screen.width > 1620 && body.classList.contains('dashboard-page')) {
+        body.classList.add('notify-opened')
+    } else {
+        body.classList.remove('notify-opened')
+    }
+    
+    window.addEventListener('resize', () => {
+        if (window.screen.width > 1620 && body.classList.contains('dashboard-page')) {
+            body.classList.add('notify-opened')
+        } else {
+            body.classList.remove('notify-opened')
         }
     })
 }
@@ -394,14 +453,14 @@ function initProgressBars() {
     })
 }
 
-function importerClicks() {
+function initImporterClicks() {
     let items = document.querySelectorAll('.container-tracking li')
+
+    if (!items) return
+
     let mobileBtn = document.querySelector('.mobile-status-btn')
     let close = document.querySelector('.mobile-status-close')
     let ul = document.querySelector('.container-tracking')
-    let shade = document.querySelector('.shade')
-
-    if (!items) return
 
     function rewriteBtn() {
         if (document.querySelector('.container-tracking li.active')) {
@@ -449,7 +508,6 @@ function importerClicks() {
 
 function initPasswords() {
     let passwordEyes = document.querySelectorAll('.password-show')
-    let passwordEyesOpened = document.querySelectorAll('.password-show.toggle')
 
     if (!passwordEyes) return
 
@@ -470,11 +528,6 @@ function initPasswords() {
             clearTimeout(hidePassword)
         }
     }))
-
-    // passwordEyes.forEach(x => x.addEventListener('mouseleave', () => {
-    //     x.previousElementSibling.setAttribute('type', 'password')
-    //     x.classList.remove('toggle')
-    // }))
 }
 
 function initInputsWrite() {
@@ -485,7 +538,6 @@ function initInputsWrite() {
     holders.forEach(holder => {
         let toggler = holder.querySelector('.input-readonly-write')
         let input = holder.querySelector('input')
-        // let oldWidth = input.getAttribute('size')
 
         holder.setAttribute('data-input', input.value)
         
@@ -600,8 +652,10 @@ function initDropZones() {
     document.querySelector('button.dz-button').innerHTML = '<span class="green">Add file</span> or drop file here'
 }
 
-function rangeInput() {
+function initRangeInput() {
     let rangeSliders = document.querySelectorAll('.price-choose')
+
+    if (!rangeSliders) return
 
     rangeSliders.forEach(x => {
         window.addEventListener('load', function(){
@@ -673,5 +727,158 @@ function rangeInput() {
             }
             fillColor()
         }
+    })
+}
+
+function initDashboardCharts() {
+    let chartsDouble = document.querySelectorAll('.diagram-chart-double')
+    let chartsQuadruple = document.querySelectorAll('.diagram-chart-quadruple')
+
+    chartsDouble.forEach(chartItem => {
+        let par = chartItem.closest('.diagram-holder')
+        let details = par.querySelector('.diagram-details')
+        let detailItems = details.querySelectorAll('ul li')
+
+        let sum = parseInt(detailItems[0].getAttribute('data-count')) + parseInt(detailItems[1].getAttribute('data-count'))
+        par.querySelector('[data-sum-holder]').innerHTML = Intl.NumberFormat('ru-RU').format(sum);
+
+        detailItems.forEach(x => {
+            let count = x.getAttribute('data-count')
+
+            x.querySelector('[data-count-holder]').innerHTML = '$ ' + Intl.NumberFormat('ru-RU').format(count);
+        })
+
+        const chartData = {
+            labels: ['Active', 'Close'],
+            data: [detailItems[0].getAttribute('data-count'), detailItems[1].getAttribute('data-count')]
+        }
+
+        new Chart(chartItem, {
+            type: 'doughnut',
+            data: {
+                labels: chartData.labels,
+                datasets: [{
+                    data: chartData.data,
+                    backgroundColor: [
+                        'rgb(254, 209, 48)',
+                        'rgb(32, 193, 223)'
+                    ],
+                }],
+            },
+            options: {
+                borderWidth: 0,
+                cutout: 64,
+                events: [],
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                }
+            },
+            defaults: {
+                elements: {
+                    bar: {
+                        borderWidth: 2
+                    }
+                }
+            }
+        })
+    })
+
+    chartsQuadruple.forEach(chartItem => {
+        let par = chartItem.closest('.diagram-holder')
+        let details = par.querySelector('.diagram-details')
+        let detailItems = details.querySelectorAll('ul li')
+
+        let sum = parseInt(detailItems[0].getAttribute('data-count')) + parseInt(detailItems[1].getAttribute('data-count')) + parseInt(detailItems[2].getAttribute('data-count')) + parseInt(detailItems[3].getAttribute('data-count'))
+        par.querySelector('[data-sum-holder]').innerHTML = Intl.NumberFormat('ru-RU').format(sum);
+
+        detailItems.forEach(x => {
+            let count = x.getAttribute('data-count')
+            
+            x.querySelector('[data-count-holder]').innerHTML = '$ ' + Intl.NumberFormat('ru-RU').format(count);
+
+            if (details.classList.contains('lots')) {
+                x.querySelector('[data-count-holder]').innerHTML = Intl.NumberFormat('ru-RU').format(count) + ' lots';
+            }
+        })
+
+        const chartData = {
+            labels: ['Active', 'Close'],
+            data: [detailItems[0].getAttribute('data-count'), detailItems[1].getAttribute('data-count'), detailItems[2].getAttribute('data-count'), detailItems[3].getAttribute('data-count')]
+        }
+
+        new Chart(chartItem, {
+            type: 'doughnut',
+            data: {
+                labels: chartData.labels,
+                datasets: [{
+                    data: chartData.data,
+                    backgroundColor: [
+                        'rgb(234, 31, 75)',
+                        'rgb(254, 209, 48)',
+                        'rgb(35, 175, 83)',
+                        'rgb(32, 193, 223)'
+                    ],
+                }],
+            },
+            options: {
+                borderWidth: 0,
+                cutout: 64,
+                events: [],
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                }
+            },
+            defaults: {
+                elements: {
+                    bar: {
+                        borderWidth: 2
+                    }
+                }
+            }
+        })
+    })
+}
+
+function onScrollHandler() {
+    const header = document.querySelector('header')
+    let prevScroll = window.pageYOffset
+    let currentScroll
+
+    window.addEventListener('scroll', () => {
+
+        currentScroll = window.pageYOffset
+
+        const headerHidden = () => body.classList.contains('header-hidden')
+
+        if (currentScroll > prevScroll && !headerHidden()) {
+            body.classList.add('header-hidden')
+        }
+        if (currentScroll < prevScroll && headerHidden()) {
+            body.classList.remove('header-hidden')
+        }
+
+        prevScroll = currentScroll
+    })
+}
+
+function initNotifySlider() {
+    let notificationNavs = document.querySelectorAll('.notifications-header .radio-choose li')
+
+    if (!notificationNavs) return
+
+    notificationNavs.forEach(x => {
+        let target = x.getAttribute('data-notifications-list')
+        let contentItems = document.querySelectorAll('.notifications-content .notifications-list')
+        
+        x.addEventListener('click', () => {
+            contentItems.forEach(x => x.classList.remove('active'))
+            
+            Array.from(contentItems)[parseInt(target) - 1].classList.add('active')
+        })
+
     })
 }

@@ -1,0 +1,173 @@
+---
+layout: dashboard
+title: Dashboard - Importer Outgoing
+---
+
+<div class="main">
+    <h1>Dashboard</h1>
+    <div class="outgoing">
+        <div class="h3">Outgoing</div>
+        <ul>
+            <li>
+                <div class="outgoing-item-header">
+                    <p class="h4">Deals with exporter</p>
+                    <img src="assets/images/icon/aside-deals&finance.svg" alt="">
+                </div>
+                <p class="h3">$ 100 012</p>
+                <p class="subtitle">13 000 ₽</p>
+            </li>
+            <li>
+                <div class="outgoing-item-header">
+                    <p class="h4">Transport</p>
+                    <img src="assets/images/icon/aside-containers.svg" alt="">
+                </div>
+                <p class="h3">$ 100 012</p>
+                <p class="subtitle">13 000 ₽</p>
+            </li>
+            <li>
+                <div class="outgoing-item-header">
+                    <p class="h4">VAT</p>
+                    <img src="assets/images/icon/percent.svg" alt="">
+                </div>
+                <p class="h3">$ 100 012</p>
+                <p class="subtitle">13 000 ₽</p>
+            </li>
+        </ul>
+    </div>
+    <div class="diagram-large">
+        <div class="diagram-header">
+            <div class="h2">Beansy Cloud finance</div>
+            <a class="image-link" href=""></a>
+        </div>
+        <div class="diagram-holder">
+            <div class="diagram-circle">
+                <canvas class="diagram-chart-quadruple"></canvas>
+                <!-- в data-sum-holder летит сумма значений ниже -->
+                <p class="h6" data-sum-holder></p>
+                <p class="body">Всего</p>
+            </div>
+            <div class="diagram-details">
+                <ul>
+                    <!-- значения дата атрибутов летят в data-count-holder и -->
+                    <!-- на значениях data-count строится график -->
+                    <li data-count="13000">
+                        <p class="subtitle">Production</p>
+                        <div class="diagram-item-color" style="background-color: #EA1F4B;"></div>
+                        <p class="h4" data-count-holder></p>
+                        <p class="caption"><span>211</span> Lots</p>
+                        <p class="caption"><span>12</span> Roasters</p>
+                    </li>
+                    <li data-count="10000">
+                        <p class="subtitle">Transit</p>
+                        <div class="diagram-item-color" style="background-color: #FED130"></div>
+                        <p class="h4" data-count-holder></p>
+                        <p class="caption"><span>211</span> Lots</p>
+                        <p class="caption"><span>12</span> Roasters</p>
+                    </li>
+                    <li data-count="17000">
+                        <p class="subtitle">SPOT</p>
+                        <div class="diagram-item-color" style="background-color: #23AF53;"></div>
+                        <p class="h4" data-count-holder></p>
+                        <p class="caption"><span>211</span> Lots</p>
+                        <p class="caption"><span>12</span> Roasters</p>
+                    </li>
+                    <li data-count="8000">
+                        <p class="subtitle">Producer</p>
+                        <div class="diagram-item-color" style="background-color: #20C1DF"></div>
+                        <p class="h4" data-count-holder></p>
+                        <p class="caption"><span>211</span> Lots</p>
+                        <p class="caption"><span>12</span> Roasters</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ul class="dashboard-subdiagram meta-info-blocks">
+        <li>
+            <p class="subtitle">Overall balance</p>
+            <p class="h2">$ 20 049 000</p>
+            <p class="subtitle">13 000 ₽</p>
+        </li>
+        <li>
+            <p class="subtitle">Reserved</p>
+            <p class="h2">$ 20 049 000</p>
+            <p class="subtitle">13 000 ₽</p>
+        </li>
+        <li>
+            <p class="subtitle">Overall balance</p>
+            <p class="h2">$ 20 049 000</p>
+            <p class="subtitle">13 000 ₽</p>
+        </li>
+    </ul>
+    <div class="dashboard-grid">
+        <div class="diagram-small">
+            <div class="diagram-header">
+                <div class="h2">Deals</div>
+                <select name="" id="" class="choices">
+                    <option value="">Month</option>
+                    <option>Year</option>
+                    <option>Week</option>
+                    <option>Day</option>
+                </select>
+            </div>
+            <div class="diagram-holder">
+                <div class="diagram-circle">
+                    <canvas class="diagram-chart-double"></canvas>
+                    <!-- в h6 летит сумма значений ниже -->
+                    <p class="h6" data-sum-holder></p>
+                    <p class="body">Всего</p>
+                </div>
+                <div class="diagram-details">
+                    <ul>
+                        <!-- значения летят в data-count-holder -->
+                        <!-- на data-count'ах строится график -->
+                        <li data-count="13000">
+                            <p class="subtitle">Active</p>
+                            <div class="diagram-item-color" style="background-color: #FED130;"></div>
+                            <p class="h4" data-count-holder></p>
+                            <p class="caption"><span>211</span> Deals</p>
+                        </li>
+                        <li data-count="10000">
+                            <p class="subtitle">Active</p>
+                            <div class="diagram-item-color" style="background-color: #20C1DF"></div>
+                            <p class="h4" data-count-holder></p>
+                            <p class="caption"><span>211</span> Deals</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard-block-small">
+            <p class="h3">Available coffee</p>
+            <ul>
+                <li>
+                    <div class="marker spot">
+                        <p class="h5">SPOT</p>
+                    </div>
+                    <p>
+                        <span class="h4">$ 100 012</span>
+                        <br><span class="subtitle">13 000 ₽ </span>
+                    </p>
+                </li>
+                <li>
+                    <div class="marker transit">
+                        <p class="h5">Transit</p>
+                    </div>
+                    <p>
+                        <span class="h4">$ 100 012</span>
+                        <br><span class="subtitle">13 000 ₽ </span>
+                    </p>
+                </li>
+                <li>
+                    <div class="marker local-office">
+                        <p class="h5">Local office</p>
+                    </div>
+                    <p>
+                        <span class="h4">$ 100 012</span>
+                        <br><span class="subtitle">13 000 ₽ </span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

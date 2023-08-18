@@ -1,5 +1,5 @@
 ---
-layout: aside
+layout: aside-importer
 title: Container-Detail Main
 ---
 
@@ -120,19 +120,16 @@ title: Container-Detail Main
                         <div class="imgholder" data-table-toggler></div>
                         <div class="button" data-table-toggler>View Deals</div>
                     </td>
-                    <td data-name="ico">
+                    <td data-table-name="ICO">
                         <a href="" class="plus"></a>
                     </td>
                     <td>
-                        <div class="table-coffee-item">
-                            <img src="/assets/images/other/brazil.png" alt="">
-                            <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                        </div>
+                        {{>table-coffee-item}}
                     </td>
-                    <td data-name="producer">Marcelo and Roberto Flanzer</td>
-                    <td data-name="price-per-kg">10</td>
-                    <td data-name="quantity">1 000</td>
-                    <td data-name="total">100 000</td>
+                    <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                    <td data-table-name="Price per kg">10</td>
+                    <td data-table-name="Quantity">1 000</td>
+                    <td data-table-name="Total $">100 000</td>
                     <td class="table-cell" data-table-content>
                         <table class="table-cell-subtable">
                             <tr>
@@ -159,8 +156,8 @@ title: Container-Detail Main
                                     <div class="red-status">Wait buyer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -169,8 +166,8 @@ title: Container-Detail Main
                                     <div class="green-status">Deal confirmed</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -179,8 +176,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by buyer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -189,8 +186,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by producer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -199,8 +196,8 @@ title: Container-Detail Main
                                     <div class="yellow-status">Wait producer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                         </table>
                     </td>
@@ -210,17 +207,14 @@ title: Container-Detail Main
                         <div class="imgholder" data-table-toggler></div>
                         <div class="button" data-table-toggler>View Deals</div>
                     </td>
-                    <td data-name="ico">002/2131/0023</td>
+                    <td data-table-name="ICO">002/2131/0023</td>
                     <td>
-                        <div class="table-coffee-item">
-                            <img src="/assets/images/other/brazil.png" alt="">
-                            <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                        </div>
+                        {{>table-coffee-item}}
                     </td>
-                    <td data-name="producer">Marcelo and Roberto Flanzer</td>
-                    <td data-name="price-per-kg">10</td>
-                    <td data-name="quantity">1 000</td>
-                    <td data-name="total">100 000</td>
+                    <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                    <td data-table-name="Price per kg">10</td>
+                    <td data-table-name="Quantity">1 000</td>
+                    <td data-table-name="Total $">100 000</td>
                     <td class="table-cell" data-table-content>
                         <table class="table-cell-subtable">
                             <tr>
@@ -247,8 +241,8 @@ title: Container-Detail Main
                                     <div class="red-status">Wait buyer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -257,8 +251,8 @@ title: Container-Detail Main
                                     <div class="green-status">Deal confirmed</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -267,8 +261,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by buyer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -277,8 +271,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by producer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -287,8 +281,8 @@ title: Container-Detail Main
                                     <div class="yellow-status">Wait producer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                         </table>
                     </td>
@@ -298,17 +292,14 @@ title: Container-Detail Main
                         <div class="imgholder" data-table-toggler></div>
                         <div class="button" data-table-toggler>View Deals</div>
                     </td>
-                    <td data-name="ico">002/2131/0023</td>
+                    <td data-table-name="ICO">002/2131/0023</td>
                     <td>
-                        <div class="table-coffee-item">
-                            <img src="/assets/images/other/brazil.png" alt="">
-                            <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                        </div>
+                        {{>table-coffee-item}}
                     </td>
-                    <td data-name="producer">Marcelo and Roberto Flanzer</td>
-                    <td data-name="price-per-kg">10</td>
-                    <td data-name="quantity">1 000</td>
-                    <td data-name="total">100 000</td>
+                    <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                    <td data-table-name="Price per kg">10</td>
+                    <td data-table-name="Quantity">1 000</td>
+                    <td data-table-name="Total $">100 000</td>
                     <td class="table-cell" data-table-content>
                         <table class="table-cell-subtable">
                             <tr>
@@ -335,8 +326,8 @@ title: Container-Detail Main
                                     <div class="red-status">Wait buyer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -345,8 +336,8 @@ title: Container-Detail Main
                                     <div class="green-status">Deal confirmed</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -355,8 +346,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by buyer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -365,8 +356,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by producer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -375,8 +366,8 @@ title: Container-Detail Main
                                     <div class="yellow-status">Wait producer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                         </table>
                     </td>
@@ -386,17 +377,14 @@ title: Container-Detail Main
                         <div class="imgholder" data-table-toggler></div>
                         <div class="button" data-table-toggler>View Deals</div>
                     </td>
-                    <td data-name="ico">002/2131/0023</td>
+                    <td data-table-name="ICO">002/2131/0023</td>
                     <td>
-                        <div class="table-coffee-item">
-                            <img src="/assets/images/other/brazil.png" alt="">
-                            <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                        </div>
+                        {{>table-coffee-item}}
                     </td>
-                    <td data-name="producer">Marcelo and Roberto Flanzer</td>
-                    <td data-name="price-per-kg">10</td>
-                    <td data-name="quantity">1 000</td>
-                    <td data-name="total">100 000</td>
+                    <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                    <td data-table-name="Price per kg">10</td>
+                    <td data-table-name="Quantity">1 000</td>
+                    <td data-table-name="Total $">100 000</td>
                     <td class="table-cell" data-table-content>
                         <table class="table-cell-subtable">
                             <tr>
@@ -423,8 +411,8 @@ title: Container-Detail Main
                                     <div class="red-status">Wait buyer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -433,8 +421,8 @@ title: Container-Detail Main
                                     <div class="green-status">Deal confirmed</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -443,8 +431,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by buyer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -453,8 +441,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by producer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -463,8 +451,8 @@ title: Container-Detail Main
                                     <div class="yellow-status">Wait producer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                         </table>
                     </td>
@@ -474,17 +462,14 @@ title: Container-Detail Main
                         <div class="imgholder" data-table-toggler></div>
                         <div class="button" data-table-toggler>View Deals</div>
                     </td>
-                    <td data-name="ico">002/2131/0023</td>
+                    <td data-table-name="ICO">002/2131/0023</td>
                     <td>
-                        <div class="table-coffee-item">
-                            <img src="/assets/images/other/brazil.png" alt="">
-                            <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                        </div>
+                        {{>table-coffee-item}}
                     </td>
-                    <td data-name="producer">Marcelo and Roberto Flanzer</td>
-                    <td data-name="price-per-kg">10</td>
-                    <td data-name="quantity">1 000</td>
-                    <td data-name="total">100 000</td>
+                    <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                    <td data-table-name="Price per kg">10</td>
+                    <td data-table-name="Quantity">1 000</td>
+                    <td data-table-name="Total $">100 000</td>
                     <td class="table-cell" data-table-content>
                         <table class="table-cell-subtable">
                             <tr>
@@ -511,8 +496,8 @@ title: Container-Detail Main
                                     <div class="red-status">Wait buyer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -521,8 +506,8 @@ title: Container-Detail Main
                                     <div class="green-status">Deal confirmed</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -531,8 +516,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by buyer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -541,8 +526,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by producer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -551,8 +536,8 @@ title: Container-Detail Main
                                     <div class="yellow-status">Wait producer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                         </table>
                     </td>
@@ -562,17 +547,14 @@ title: Container-Detail Main
                         <div class="imgholder" data-table-toggler></div>
                         <div class="button" data-table-toggler>View Deals</div>
                     </td>
-                    <td data-name="ico">002/2131/0023</td>
+                    <td data-table-name="ICO">002/2131/0023</td>
                     <td>
-                        <div class="table-coffee-item">
-                            <img src="/assets/images/other/brazil.png" alt="">
-                            <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                        </div>
+                        {{>table-coffee-item}}
                     </td>
-                    <td data-name="producer">Marcelo and Roberto Flanzer</td>
-                    <td data-name="price-per-kg">10</td>
-                    <td data-name="quantity">1 000</td>
-                    <td data-name="total">100 000</td>
+                    <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                    <td data-table-name="Price per kg">10</td>
+                    <td data-table-name="Quantity">1 000</td>
+                    <td data-table-name="Total $">100 000</td>
                     <td class="table-cell" data-table-content>
                         <table class="table-cell-subtable">
                             <tr>
@@ -599,8 +581,8 @@ title: Container-Detail Main
                                     <div class="red-status">Wait buyer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -609,8 +591,8 @@ title: Container-Detail Main
                                     <div class="green-status">Deal confirmed</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -619,8 +601,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by buyer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -629,8 +611,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by producer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -639,8 +621,8 @@ title: Container-Detail Main
                                     <div class="yellow-status">Wait producer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                         </table>
                     </td>
@@ -650,17 +632,14 @@ title: Container-Detail Main
                         <div class="imgholder" data-table-toggler></div>
                         <div class="button" data-table-toggler>View Deals</div>
                     </td>
-                    <td data-name="ico">002/2131/0023</td>
+                    <td data-table-name="ICO">002/2131/0023</td>
                     <td>
-                        <div class="table-coffee-item">
-                            <img src="/assets/images/other/brazil.png" alt="">
-                            <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                        </div>
+                        {{>table-coffee-item}}
                     </td>
-                    <td data-name="producer">Marcelo and Roberto Flanzer</td>
-                    <td data-name="price-per-kg">10</td>
-                    <td data-name="quantity">1 000</td>
-                    <td data-name="total">100 000</td>
+                    <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                    <td data-table-name="Price per kg">10</td>
+                    <td data-table-name="Quantity">1 000</td>
+                    <td data-table-name="Total $">100 000</td>
                     <td class="table-cell" data-table-content>
                         <table class="table-cell-subtable">
                             <tr>
@@ -687,8 +666,8 @@ title: Container-Detail Main
                                     <div class="red-status">Wait buyer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -697,8 +676,8 @@ title: Container-Detail Main
                                     <div class="green-status">Deal confirmed</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -707,8 +686,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by buyer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -717,8 +696,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by producer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -727,8 +706,8 @@ title: Container-Detail Main
                                     <div class="yellow-status">Wait producer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                         </table>
                     </td>
@@ -738,19 +717,16 @@ title: Container-Detail Main
                         <div class="imgholder" data-table-toggler></div>
                         <div class="button" data-table-toggler>View Deals</div>
                     </td>
-                    <td data-name="ico">
+                    <td data-table-name="ICO">
                         <a href="" class="plus"></a>
                     </td>
                     <td>
-                        <div class="table-coffee-item">
-                            <img src="/assets/images/other/brazil.png" alt="">
-                            <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                        </div>
+                        {{>table-coffee-item}}
                     </td>
-                    <td data-name="producer">Marcelo and Roberto Flanzer</td>
-                    <td data-name="price-per-kg">10</td>
-                    <td data-name="quantity">1 000</td>
-                    <td data-name="total">100 000</td>
+                    <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                    <td data-table-name="Price per kg">10</td>
+                    <td data-table-name="Quantity">1 000</td>
+                    <td data-table-name="Total $">100 000</td>
                     <td class="table-cell" data-table-content>
                         <table class="table-cell-subtable">
                             <tr>
@@ -777,8 +753,8 @@ title: Container-Detail Main
                                     <div class="red-status">Wait buyer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -787,8 +763,8 @@ title: Container-Detail Main
                                     <div class="green-status">Deal confirmed</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -797,8 +773,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by buyer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -807,8 +783,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by producer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -817,8 +793,8 @@ title: Container-Detail Main
                                     <div class="yellow-status">Wait producer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                         </table>
                     </td>
@@ -828,19 +804,16 @@ title: Container-Detail Main
                         <div class="imgholder" data-table-toggler></div>
                         <div class="button" data-table-toggler>View Deals</div>
                     </td>
-                    <td data-name="ico">
+                    <td data-table-name="ICO">
                         <a href="" class="plus"></a>
                     </td>
                     <td>
-                        <div class="table-coffee-item">
-                            <img src="/assets/images/other/brazil.png" alt="">
-                            <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                        </div>
+                        {{>table-coffee-item}}
                     </td>
-                    <td data-name="producer">Marcelo and Roberto Flanzer</td>
-                    <td data-name="price-per-kg">10</td>
-                    <td data-name="quantity">1 000</td>
-                    <td data-name="total">100 000</td>
+                    <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                    <td data-table-name="Price per kg">10</td>
+                    <td data-table-name="Quantity">1 000</td>
+                    <td data-table-name="Total $">100 000</td>
                     <td class="table-cell" data-table-content>
                         <table class="table-cell-subtable">
                             <tr>
@@ -867,8 +840,8 @@ title: Container-Detail Main
                                     <div class="red-status">Wait buyer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -877,8 +850,8 @@ title: Container-Detail Main
                                     <div class="green-status">Deal confirmed</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -887,8 +860,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by buyer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -897,8 +870,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by producer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -907,8 +880,8 @@ title: Container-Detail Main
                                     <div class="yellow-status">Wait producer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                         </table>
                     </td>
@@ -918,19 +891,16 @@ title: Container-Detail Main
                         <div class="imgholder" data-table-toggler></div>
                         <div class="button" data-table-toggler>View Deals</div>
                     </td>
-                    <td data-name="ico">
+                    <td data-table-name="ICO">
                         <a href="" class="plus"></a>
                     </td>
                     <td>
-                        <div class="table-coffee-item">
-                            <img src="/assets/images/other/brazil.png" alt="">
-                            <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                        </div>
+                        {{>table-coffee-item}}
                     </td>
-                    <td data-name="producer">Marcelo and Roberto Flanzer</td>
-                    <td data-name="price-per-kg">10</td>
-                    <td data-name="quantity">1 000</td>
-                    <td data-name="total">100 000</td>
+                    <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                    <td data-table-name="Price per kg">10</td>
+                    <td data-table-name="Quantity">1 000</td>
+                    <td data-table-name="Total $">100 000</td>
                     <td class="table-cell" data-table-content>
                         <table class="table-cell-subtable">
                             <tr>
@@ -957,8 +927,8 @@ title: Container-Detail Main
                                     <div class="red-status">Wait buyer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -967,8 +937,8 @@ title: Container-Detail Main
                                     <div class="green-status">Deal confirmed</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -977,8 +947,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by buyer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -987,8 +957,8 @@ title: Container-Detail Main
                                     <div class="grey-status">Cancelled by producer</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                             <tr>
                                 <td></td>
@@ -997,8 +967,8 @@ title: Container-Detail Main
                                     <div class="yellow-status">Wait producer approval</div>
                                 </td>
                                 <td>2022-02-13 13:44</td>
-                                <td data-name="quantity">35</td>
-                                <td data-name="total">100 000</td>
+                                <td data-table-name="Quantity">35</td>
+                                <td data-table-name="Total $">100 000</td>
                             </tr>
                         </table>
                     </td>

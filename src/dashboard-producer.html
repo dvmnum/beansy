@@ -1,0 +1,844 @@
+---
+layout: dashboard
+title: Dashboard - Producer
+---
+
+<div class="main">
+    <h1>Dashboard</h1>
+    <div class="dashboard-column">
+        <div class="header-space-between">
+            <h3>Active deals</h3>
+            <a class="caption-header link" href="">See all</a>
+        </div>
+        <table class="table-big dashboard-producer">
+            <tr>
+                <th></th>
+                <th>DealID</th>
+                <th>Pr.deadline</th>
+                <th>Lot name</th>
+                <th>Exporter</th>
+                <th>Quantity (kg)</th>
+                <th>Total $</th>
+                <th>Status</th>
+            </tr>
+            <tr data-toggle>
+                <td>
+                    <div class="imgholder" data-table-toggler></div>
+                    <div class="button" data-table-toggler>View Deals</div>
+                </td>
+                <td data-before-inline-same="ID">2034</td>
+                <td data-table-name="Pr.deadline">2022-02-13</td>
+                <td>{{>table-coffee-item}}</td>
+                <td>{{>table-personal}}</td>
+                <td data-table-name="Quantity">1 000</td>
+                <td data-table-name="Total $">1 000</td>
+                <td><div class="yellow-status">Wait producer approval</div></td>
+                <td class="table-cell" data-table-content>
+                    <table class="table-cell-subtable">
+                        <tr>
+                            <th></th>
+                            <th>Roaster</th>
+                            <th>Pr.deadline</th>
+                            <th>Quantity (kg)</th>
+                            <th>Total $</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                        <tr class="mobile-header">
+                            <td>
+                                <p>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</p>
+                                <img src="/assets/images/other/brazil.png" alt="">
+                            </td>
+                            <td>
+                                <div class="mobile-table-closer" data-table-closer></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="yellow-status">Wait producer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button">Confirm</div>
+                                    <div class="button third">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="red-status">Wait buyer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="green-status">Deal confirmed</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="grey-status">Cancelled by producer</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="grey-status">Cancelled by producer</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="red-status">Wait buyer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr data-toggle>
+                <td>
+                    <div class="imgholder" data-table-toggler></div>
+                    <div class="button" data-table-toggler>View Deals</div>
+                </td>
+                <td data-before-inline-same="ID">2034</td>
+                <td data-table-name="Pr.deadline">2022-02-13</td>
+                <td>{{>table-coffee-item}}</td>
+                <td>{{>table-personal}}</td>
+                <td data-table-name="Quantity">1 000</td>
+                <td data-table-name="Total $">1 000</td>
+                <td><div class="yellow-status">Wait producer approval</div></td>
+                <td class="table-cell" data-table-content>
+                    <table class="table-cell-subtable">
+                        <tr>
+                            <th></th>
+                            <th>Roaster</th>
+                            <th>Pr.deadline</th>
+                            <th>Quantity (kg)</th>
+                            <th>Total $</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                        <tr class="mobile-header">
+                            <td>
+                                <h4>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022
+                                    <img src="/assets/images/other/brazil.png" alt="">
+                                </h4>
+                            </td>
+                            <td>
+                                <div class="mobile-table-closer" data-table-closer></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="yellow-status">Wait producer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button">Confirm</div>
+                                    <div class="button third">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="red-status">Wait buyer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="green-status">Deal confirmed</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="grey-status">Cancelled by producer</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="grey-status">Cancelled by producer</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="red-status">Wait buyer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr data-toggle>
+                <td>
+                    <div class="imgholder" data-table-toggler></div>
+                    <div class="button" data-table-toggler>View Deals</div>
+                </td>
+                <td data-before-inline-same="ID">2034</td>
+                <td data-table-name="Pr.deadline">2022-02-13</td>
+                <td>{{>table-coffee-item}}</td>
+                <td>{{>table-personal}}</td>
+                <td data-table-name="Quantity">1 000</td>
+                <td data-table-name="Total $">1 000</td>
+                <td><div class="yellow-status">Wait producer approval</div></td>
+                <td class="table-cell" data-table-content>
+                    <table class="table-cell-subtable">
+                        <tr>
+                            <th></th>
+                            <th>Roaster</th>
+                            <th>Pr.deadline</th>
+                            <th>Quantity (kg)</th>
+                            <th>Total $</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                        <tr class="mobile-header">
+                            <td>
+                                <p>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</p>
+                                <img src="/assets/images/other/brazil.png" alt="">
+                            </td>
+                            <td>
+                                <div class="mobile-table-closer" data-table-closer></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="yellow-status">Wait producer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button">Confirm</div>
+                                    <div class="button third">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="red-status">Wait buyer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="green-status">Deal confirmed</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="grey-status">Cancelled by producer</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="grey-status">Cancelled by producer</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="red-status">Wait buyer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr data-toggle>
+                <td>
+                    <div class="imgholder" data-table-toggler></div>
+                    <div class="button" data-table-toggler>View Deals</div>
+                </td>
+                <td data-before-inline-same="ID">2034</td>
+                <td data-table-name="Pr.deadline">2022-02-13</td>
+                <td>{{>table-coffee-item}}</td>
+                <td>{{>table-personal}}</td>
+                <td data-table-name="Quantity">1 000</td>
+                <td data-table-name="Total $">1 000</td>
+                <td><div class="yellow-status">Wait producer approval</div></td>
+                <td class="table-cell" data-table-content>
+                    <table class="table-cell-subtable">
+                        <tr>
+                            <th></th>
+                            <th>Roaster</th>
+                            <th>Pr.deadline</th>
+                            <th>Quantity (kg)</th>
+                            <th>Total $</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                        <tr class="mobile-header">
+                            <td>
+                                <p>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</p>
+                                <img src="/assets/images/other/brazil.png" alt="">
+                            </td>
+                            <td>
+                                <div class="mobile-table-closer" data-table-closer></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="yellow-status">Wait producer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button">Confirm</div>
+                                    <div class="button third">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="red-status">Wait buyer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="green-status">Deal confirmed</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="grey-status">Cancelled by producer</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="grey-status">Cancelled by producer</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="red-status">Wait buyer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr data-toggle>
+                <td>
+                    <div class="imgholder" data-table-toggler></div>
+                    <div class="button" data-table-toggler>View Deals</div>
+                </td>
+                <td data-before-inline-same="ID">2034</td>
+                <td data-table-name="Pr.deadline">2022-02-13</td>
+                <td>{{>table-coffee-item}}</td>
+                <td>{{>table-personal}}</td>
+                <td data-table-name="Quantity">1 000</td>
+                <td data-table-name="Total $">1 000</td>
+                <td><div class="yellow-status">Wait producer approval</div></td>
+                <td class="table-cell" data-table-content>
+                    <table class="table-cell-subtable">
+                        <tr>
+                            <th></th>
+                            <th>Roaster</th>
+                            <th>Pr.deadline</th>
+                            <th>Quantity (kg)</th>
+                            <th>Total $</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                        <tr class="mobile-header">
+                            <td>
+                                <p>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</p>
+                                <img src="/assets/images/other/brazil.png" alt="">
+                            </td>
+                            <td>
+                                <div class="mobile-table-closer" data-table-closer></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="yellow-status">Wait producer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button">Confirm</div>
+                                    <div class="button third">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="red-status">Wait buyer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="green-status">Deal confirmed</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="grey-status">Cancelled by producer</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="grey-status">Cancelled by producer</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td data-table-name="Roaster">{{>table-personal}}</td>
+                            <td data-table-name="Pr.deadline">2022-02-13 13:44</td>
+                            <td data-table-name="Quantity">1 000</td>
+                            <td data-table-name="Total $">100 000</td>
+                            <td><div class="red-status">Wait buyer approval</div></td>
+                            <td>
+                                <div class="buttons">
+                                    <div class="button disable">Confirm</div>
+                                    <div class="button third disable">Decline</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="header-space-between">
+        <h3>Open containers</h3>
+        <a class="caption-header link" href="">See all</a>
+    </div>
+    <div class="dashboard-column">
+        <div class="exporter-container-item">
+            <div class="mobile-flex">
+                <div class="green-status">Open until 2022-02-13</div>
+                <p class="h4">Open until 2022-02-13</p>
+            </div>
+            <div class="container-header-path">
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/brazil.png" alt="">
+                    </div>
+                    <h4>Brasil, Santos</h4>
+                    <p class="body">2022-01-22</p>
+                </div>
+                <div class="path-16">
+                    <div class="path-element"></div>
+                </div>
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/russia.png" alt="">
+                    </div>
+                    <h4>Russia, Saint-Petersburg</h4>
+                    <p class="body">2022-01-22</p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <p class="body">Importer</p>
+                    <p class="body-big">Ecoagricola</p>
+                </li>
+                <li>
+                    <p class="body">Booking</p>
+                    <form class="write-input-form" data-input="">
+                        <!-- если в инпуте значение больше сайза под ним будет вспывать подсказка -->
+                        <input class="input-readonly" type="text" value="2353452" size="7" readonly="readonly">
+                        <div class="input-readonly-write"></div>
+                    </form>
+                </li>
+                <li>
+                    <p class="body">Container number</p>
+                    <form class="write-input-form" data-input="">
+                        <!-- если в инпуте значение больше сайза под ним будет вспывать подсказка -->
+                        <input class="input-readonly" type="text" value="123891203" size="9" readonly="readonly">
+                        <div class="input-readonly-write"></div>
+                    </form>
+                </li>
+                <li>
+                    <p class="body">Net weight</p>
+                    <p class="body-big">800 kg</p>
+                </li>
+                <li>
+                    <p class="body">Gross weight</p>
+                    <p class="body-big">900 kg</p>
+                </li>
+            </ul>
+            <div class="container-detail-progressbar">
+                <p class="h1">72%</p>
+                <div class="progressbar-bg">
+                    <div class="progressbar" data-persent="72"></div>
+                </div>
+                <p class="body-big">Available: 7900 kg</p>
+            </div>
+            <div class="stat-items">
+                <div class="stat-item">
+                    <p class="body">Subtotal</p>
+                    <p class="body">109 000</p>
+                </div>
+                <div class="stat-item">
+                    <p class="body">Total</p>
+                    <p class="h6">$ 12 109 000</p>
+                </div>
+            </div>
+        </div>
+        <div class="exporter-container-item">
+            <div class="mobile-flex">
+                <div class="green-status">Open until 2022-02-13</div>
+                <p class="h4">Open until 2022-02-13</p>
+            </div>
+            <div class="container-header-path">
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/brazil.png" alt="">
+                    </div>
+                    <h4>Brasil, Santos</h4>
+                    <p class="body">2022-01-22</p>
+                </div>
+                <div class="path-16">
+                    <div class="path-element"></div>
+                </div>
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/russia.png" alt="">
+                    </div>
+                    <h4>Russia, Saint-Petersburg</h4>
+                    <p class="body">2022-01-22</p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <p class="body">Importer</p>
+                    <p class="body-big">Ecoagricola</p>
+                </li>
+                <li>
+                    <p class="body">Booking</p>
+                    <form class="write-input-form" data-input="">
+                        <!-- если в инпуте значение больше сайза под ним будет вспывать подсказка -->
+                        <input class="input-readonly" type="text" value="2353452" size="7" readonly="readonly">
+                        <div class="input-readonly-write"></div>
+                    </form>
+                </li>
+                <li>
+                    <p class="body">Container number</p>
+                    <form class="write-input-form" data-input="">
+                        <!-- если в инпуте значение больше сайза под ним будет вспывать подсказка -->
+                        <input class="input-readonly" type="text" value="123891203" size="9" readonly="readonly">
+                        <div class="input-readonly-write"></div>
+                    </form>
+                </li>
+                <li>
+                    <p class="body">Net weight</p>
+                    <p class="body-big">800 kg</p>
+                </li>
+                <li>
+                    <p class="body">Gross weight</p>
+                    <p class="body-big">900 kg</p>
+                </li>
+            </ul>
+            <div class="container-detail-progressbar">
+                <p class="h1">72%</p>
+                <div class="progressbar-bg">
+                    <div class="progressbar" data-persent="72"></div>
+                </div>
+                <p class="body-big">Available: 7900 kg</p>
+            </div>
+            <div class="stat-items">
+                <div class="stat-item">
+                    <p class="body">Subtotal</p>
+                    <p class="body">109 000</p>
+                </div>
+                <div class="stat-item">
+                    <p class="body">Total</p>
+                    <p class="h6">$ 12 109 000</p>
+                </div>
+            </div>
+        </div>
+        <div class="exporter-container-item">
+            <div class="mobile-flex">
+                <div class="green-status">Open until 2022-02-13</div>
+                <p class="h4">Open until 2022-02-13</p>
+            </div>
+            <div class="container-header-path">
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/brazil.png" alt="">
+                    </div>
+                    <h4>Brasil, Santos</h4>
+                    <p class="body">2022-01-22</p>
+                </div>
+                <div class="path-16">
+                    <div class="path-element"></div>
+                </div>
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/russia.png" alt="">
+                    </div>
+                    <h4>Russia, Saint-Petersburg</h4>
+                    <p class="body">2022-01-22</p>
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <p class="body">Importer</p>
+                    <p class="body-big">Ecoagricola</p>
+                </li>
+                <li>
+                    <p class="body">Booking</p>
+                    <form class="write-input-form" data-input="">
+                        <!-- если в инпуте значение больше сайза под ним будет вспывать подсказка -->
+                        <input class="input-readonly" type="text" value="2353452" size="7" readonly="readonly">
+                        <div class="input-readonly-write"></div>
+                    </form>
+                </li>
+                <li>
+                    <p class="body">Container number</p>
+                    <form class="write-input-form" data-input="">
+                        <!-- если в инпуте значение больше сайза под ним будет вспывать подсказка -->
+                        <input class="input-readonly" type="text" value="123891203" size="9" readonly="readonly">
+                        <div class="input-readonly-write"></div>
+                    </form>
+                </li>
+                <li>
+                    <p class="body">Net weight</p>
+                    <p class="body-big">800 kg</p>
+                </li>
+                <li>
+                    <p class="body">Gross weight</p>
+                    <p class="body-big">900 kg</p>
+                </li>
+            </ul>
+            <div class="container-detail-progressbar">
+                <p class="h1">72%</p>
+                <div class="progressbar-bg">
+                    <div class="progressbar" data-persent="72"></div>
+                </div>
+                <p class="body-big">Available: 7900 kg</p>
+            </div>
+            <div class="stat-items">
+                <div class="stat-item">
+                    <p class="body">Subtotal</p>
+                    <p class="body">109 000</p>
+                </div>
+                <div class="stat-item">
+                    <p class="body">Total</p>
+                    <p class="h6">$ 12 109 000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

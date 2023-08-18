@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" /> -->
     <title>{{ title }}</title>
 </head>
-<body data-aside-content class="aside-closed">
+<body data-aside-content class="dashboard-page notify-opened aside-closed">
     <div class="shade"></div>
     <aside class="aside-main">
         <div class="aside-content aside-closed" data-aside-content>
@@ -122,7 +122,8 @@
             </ul>
         </div>
     </aside>
-    {{> header}}
+    {{> header-roaster}}
+    {{> notifications}}
     {{> body }}
     <footer>
         <div class="footer-content">
@@ -134,10 +135,10 @@
             </ul>
         </div>
 
-        <script src="assets/js/main.js"></script>
+        <script src="assets/js/main.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </footer>
 
 </body>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"/>
+    <link rel="stylesheet" href="assets/styles/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" /> -->
+    <title>{{ title }}</title>
+</head>
+<body data-aside-content class="dashboard-page notify-opened aside-closed">
+    <div class="shade"></div>
+    <aside class="aside-main">
+        <div class="aside-content aside-closed" data-aside-content>
+            <ul class="aside-content--inner">
+                <li class="aside-link">
+                    <a href="">
+                        <div class="burger-icon"></div>
+                        <p>Main page</p>
+                    </a>
+                </li>
+                <li class="aside-link">
+                    <a href="">
+                        <div class="burger-icon"></div>
+                        <p>Buy coffee</p>
+                    </a>
+                </li>
+                <li class="aside-spoiler" data-toggler>
+                    <div>
+                        <div class="burger-icon"></div>
+                        <p>Sell coffee</p>
+                    </div>
+                    <ul class="aside-spoiler--content" data-content>
+                        <li><a href="">Producer</a></li>
+                        <li><a href="">Transit</a></li>
+                        <li><a href="">SPOT</a></li>
+                        <li><a href="">Local office</a></li>
+                        <li><a href="">Local samples</a></li>
+                    </ul>
+                </li>
+                <li class="aside-spoiler" data-toggler>
+                    <div>
+                        <div class="burger-icon"></div>
+                        <p>Deals & Finance</p>
+                    </div>
+                    <ul class="aside-spoiler--content" data-content>
+                        <li>Active deals</li>
+                        <li class="li-secondary"><a href="">With Roasters</a></li>
+                        <li class="li-secondary"><a href="">With Exporter</a></li>
+                        <li>Closed deals</li>
+                        <li class="li-secondary"><a href="">With Roasters</a></li>
+                        <li class="li-secondary"><a href="">With Exporter</a></li>
+                    </ul>
+                </li>
+                <li class="aside-spoiler" data-toggler>
+                    <div>
+                        <div class="burger-icon"></div>
+                        <p>Balance History</p>
+                    </div>
+                    <ul class="aside-spoiler--content" data-content>
+                        <li><a href="">History of billing</a></li>
+                        <li><a href="">History of transactions</a></li>
+                    </ul>
+                </li>
+                <li class="aside-spoiler" data-toggler>
+                    <div>
+                        <div class="burger-icon"></div>
+                        <p>Roster rent deals</p>
+                    </div>
+                    <ul class="aside-spoiler--content" data-content>
+                        <li><a href="">Active</a></li>
+                        <li><a href="">Closed</a></li>
+                    </ul>
+                </li>
+                <li class="aside-spoiler" data-toggler>
+                    <div>
+                        <div class="burger-icon"></div>
+                        <p>Beansy Cloud</p>
+                    </div>
+                    <ul class="aside-spoiler--content" data-content>
+                        <li><a href="">Production</a></li>
+                        <li><a href="">SPOT<div class="notify">99</div></a></li>
+                        <li><a href="">Transit</a></li>
+                        <li><a href="">Producer</a></li>
+                    </ul>
+                </li>
+                <li class="aside-spoiler" data-toggler>
+                    <div>
+                        <div class="burger-icon"></div>
+                        <p>Containers</p>
+                    </div>
+                    <ul class="aside-spoiler--content" data-content>
+                        <li><a href="">All containers</a></li>
+                        <li class="li-new"><a href="">+ Add new container</a></li>
+                    </ul>
+                </li>
+                <li class="aside-spoiler" data-toggler>
+                    <div>
+                        <div class="burger-icon"></div>
+                        <p>Warehouse</p>
+                    </div>
+                    <ul class="aside-spoiler--content" data-content>
+                        <li><a href="">Main SPOT Tomilino</a></li>
+                        <li><a href="">Office SPOT Moscow</a></li>
+                        <li><a href="">Production Moscow</a></li>
+                        <li class="li-new"><a href="">+ Add new warehouse</a></li>
+                    </ul>
+                </li>
+                <li class="aside-spoiler" data-toggler>
+                    <div>
+                        <div class="burger-icon"></div>
+                        <p>Partners</p>
+                    </div>
+                    <ul class="aside-spoiler--content" data-content>
+                        <li><a href="">Exporters</a></li>
+                        <li><a href="">Roasters</a> </li>
+                        <li><a href="">Find partners</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    {{> header-importer}}
+    {{> notifications}}
+    {{> body }}
+    <footer>
+        <div class="footer-content">
+            <p>© 2023 Beansy</p>
+            <ul>
+                <li><a href="">About</a></li>
+                <li><a href="">Contacts</a></li>
+                <li><p>Developed by <a href="">Webfly</a></p></li>
+            </ul>
+        </div>
+
+        <script src="assets/js/main.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </footer>
+
+</body>
+</html>

@@ -1,7 +1,5 @@
-<div class="notifications-opened" data-popup-content="notify">
-    <div class="notifications-closer" data-popup-closer="notify">
-        <!-- <div class="icon notify-closer"></div> -->
-    </div>
+<div class="notifications-popup" data-notifications-popup>
+    <!-- <div class="notifications-closer" data-popup-closer="notify"></div> -->
     <div class="notifications-header">
         <h2>Notification</h2>
         <form action="">
@@ -10,19 +8,19 @@
         </form>
         <ul class="radio-choose">
             <div id="marker"></div>
-            <li class="active">
+            <li class="active" data-notifications-list="1">
                 <p>Unread</p>
                 <div class="notify">99+</div>
             </li>
-            <li><p>deals</p></li>
-            <li><p>containers</p></li>
-            <li><p>lots</p></li>
-            <li><p>partnership</p></li>
+            <li data-notifications-list="2"><p>deals</p></li>
+            <li data-notifications-list="3"><p>containers</p></li>
+            <li data-notifications-list="4"><p>lots</p></li>
+            <li data-notifications-list="5"><p>partnership</p></li>
         </ul>
     </div>
     <div class="notifications-content">
-        <ul class="notifications-list">
-            <li>
+        <ul class="notifications-list active">
+            <li class="unread">
                 <div class="imgholder yellow">
                     <img src="/assets/images/icon/notify-yellow.svg" alt="">
                 </div>
@@ -32,7 +30,7 @@
                 </div>
                 <p class="body-bold">15:32 20.03.2023</p>
             </li>
-            <li>
+            <li class="unread">
                 <div class="imgholder blue">
                     <img src="/assets/images/icon/notify-blue.svg" alt="">
                 </div>
@@ -42,7 +40,7 @@
                 </div>
                 <p class="body-bold">15:32 20.03.2023</p>
             </li>
-            <li>
+            <li class="unread">
                 <div class="imgholder green">
                     <img src="/assets/images/icon/notify-green.svg" alt="">
                 </div>
@@ -52,7 +50,7 @@
                 </div>
                 <p class="body-bold">15:32 20.03.2023</p>
             </li>
-            <li>
+            <li class="unread">
                 <div class="imgholder green">
                     <img src="/assets/images/icon/notify-green.svg" alt="">
                 </div>
@@ -124,6 +122,94 @@
                 <a href="" class="body-big">Rate the item <b>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</b></a>
                 <div class="li-content">
                     <p class="body"><a href="">Rate the item</a></p>
+                </div>
+                <p class="body-bold">15:32 20.03.2023</p>
+            </li>
+        </ul>
+        <ul class="notifications-list">
+            <li>
+                <div class="imgholder yellow">
+                    <img src="/assets/images/icon/notify-yellow.svg" alt="">
+                </div>
+                <a href="" class="body-big">Lot <b>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</b> confirmed by the farmer!</a>
+                <div class="li-content">
+                    <p class="body">Please make an advance payment in <a href="">CloudSPOT</a> section</p>
+                </div>
+                <p class="body-bold">15:32 20.03.2023</p>
+            </li>
+        </ul>
+        <ul class="notifications-list">
+            <li>
+                <div class="imgholder">
+                    <img src="/assets/images/icon/notify-ava-example.png" alt="">
+                </div>
+                <a href="" class="body-big">Roaster <b>coffee and juice</b> has <b>decided to suspend</b> his partnership with you</a>
+                <div class="li-content">
+                    <p class="body">All transactions with this roaster are on hold.</p>
+                </div>
+                <p class="body-bold">15:32 20.03.2023</p>
+            </li>
+            <li>
+                <div class="imgholder">
+                    <img src="/assets/images/icon/notify-ava-example.png" alt="">
+                </div>
+                <a href="" class="body-big">Roaster <b>coffee and juice</b> has <b>renewed</b> partnership with you</a>
+                <div class="li-content">
+                    <p class="body">Your joint deals have been resumed</p>
+                </div>
+                <p class="body-bold">15:32 20.03.2023</p>
+            </li>
+            <li>
+                <div class="imgholder red">
+                    <img src="/assets/images/icon/notify-red.svg" alt="">
+                </div>
+                <a href="" class="body-big">Lot <b>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</b> available to buy</a>
+                <div class="li-content">
+                    <p class="body">Hurry up to buy while the container is open!</p>
+                </div>
+                <p class="body-bold">15:32 20.03.2023</p>
+            </li>
+            <li>
+                <div class="imgholder red">
+                    <img src="/assets/images/icon/notify-red.svg" alt="">
+                </div>
+                <a href="" class="body-big">Rate the item <b>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</b></a>
+                <div class="li-content">
+                    <p class="body"><a href="">Rate the item</a></p>
+                </div>
+                <p class="body-bold">15:32 20.03.2023</p>
+            </li>
+        </ul>
+        <ul class="notifications-list">
+            <li>
+                <div class="imgholder yellow">
+                    <img src="/assets/images/icon/notify-yellow.svg" alt="">
+                </div>
+                <a href="" class="body-big">Lot <b>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</b> confirmed by the farmer!</a>
+                <div class="li-content">
+                    <p class="body">Please make an advance payment in <a href="">CloudSPOT</a> section</p>
+                </div>
+                <p class="body-bold">15:32 20.03.2023</p>
+            </li>
+        </ul>
+        <ul class="notifications-list">
+            <li>
+                <div class="imgholder yellow">
+                    <img src="/assets/images/icon/notify-yellow.svg" alt="">
+                </div>
+                <a href="" class="body-big">Lot <b>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</b> confirmed by the farmer!</a>
+                <div class="li-content">
+                    <p class="body">Please make an advance payment in <a href="">CloudSPOT</a> section</p>
+                </div>
+                <p class="body-bold">15:32 20.03.2023</p>
+            </li>
+            <li>
+                <div class="imgholder blue">
+                    <img src="/assets/images/icon/notify-blue.svg" alt="">
+                </div>
+                <a href="" class="body-big">Lot <b>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</b> has arrived to Warehouse</a>
+                <div class="li-content">
+                    <p class="body">Please make an advance payment in <a href="">CloudSPOT</a> section</p>
                 </div>
                 <p class="body-bold">15:32 20.03.2023</p>
             </li>

@@ -1,5 +1,5 @@
 ---
-layout: aside
+layout: aside-importer
 title: Active deals - Roasters
 ---
 
@@ -30,8 +30,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button" data-table-toggler>View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -40,8 +40,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="yellow-status">Waiting to be shipped</div></td>
             <td>
                 <a href="">View</a>
@@ -68,73 +68,55 @@ title: Active deals - Roasters
                         <td></td>
                         <td>233</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
-                        <td data-name="quantity">1 000</td>
-                        <td data-name="total">100 000</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
-                        <td data-name="quantity">1 000</td>
-                        <td data-name="total">100 000</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
-                        <td data-name="quantity">1 000</td>
-                        <td data-name="total">100 000</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>233</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
-                        <td data-name="quantity">1 000</td>
-                        <td data-name="total">100 000</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
-                        <td data-name="quantity">1 000</td>
-                        <td data-name="total">100 000</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
-                        <td data-name="quantity">1 000</td>
-                        <td data-name="total">100 000</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
                     </tr>
                 </table>
             </td>
@@ -144,8 +126,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -154,8 +136,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="red-status">Payment required</div></td>
             <td>
                 <a href="">View</a>
@@ -174,10 +156,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -186,10 +165,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -198,10 +174,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -214,8 +187,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -224,8 +197,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="blue-status">Shipped</div></td>
             <td>
                 <a href="">View</a>
@@ -244,10 +217,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -256,10 +226,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -268,10 +235,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -284,8 +248,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -294,8 +258,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="red-status">Payment required</div></td>
             <td>
                 <a href="">View</a>
@@ -314,10 +278,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -326,10 +287,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -338,10 +296,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -354,8 +309,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -364,8 +319,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="grey-status">Cancelled</div></td>
             <td>
                 <a href="">View</a>
@@ -384,10 +339,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -396,10 +348,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -408,10 +357,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -424,8 +370,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -434,8 +380,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="red-status">Payment required</div></td>
             <td>
                 <a href="">View</a>
@@ -454,10 +400,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -466,10 +409,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -478,10 +418,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -494,8 +431,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -504,8 +441,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="yellow-status">Waiting to be shipped</div></td>
             <td>
                 <a href="">View</a>
@@ -524,10 +461,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -536,10 +470,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -548,10 +479,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -564,8 +492,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -574,8 +502,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="blue-status">Shipped</div></td>
             <td>
                 <a href="">View</a>
@@ -594,10 +522,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -606,10 +531,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -618,10 +540,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -634,8 +553,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -644,8 +563,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="blue-status">Shipped</div></td>
             <td>
                 <a href="">View</a>
@@ -664,10 +583,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -676,10 +592,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -688,10 +601,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -704,8 +614,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -714,8 +624,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="red-status">Payment required</div></td>
             <td>
                 <a href="">View</a>
@@ -734,10 +644,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -746,10 +653,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -758,10 +662,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -774,8 +675,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -784,8 +685,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="yellow-status">Waiting to be shipped</div></td>
             <td>
                 <a href="">View</a>
@@ -804,10 +705,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -816,10 +714,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -828,10 +723,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -844,8 +736,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -854,8 +746,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="blue-status">Shipped</div></td>
             <td>
                 <a href="">View</a>
@@ -874,10 +766,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -886,10 +775,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -898,10 +784,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -914,8 +797,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -924,8 +807,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="blue-status">Shipped</div></td>
             <td>
                 <a href="">View</a>
@@ -944,10 +827,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -956,10 +836,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -968,10 +845,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -984,8 +858,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -994,8 +868,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="red-status">Payment required</div></td>
             <td>
                 <a href="">View</a>
@@ -1014,10 +888,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1026,10 +897,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1038,10 +906,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1054,8 +919,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -1064,8 +929,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="yellow-status">Waiting to be shipped</div></td>
             <td>
                 <a href="">View</a>
@@ -1084,10 +949,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1096,10 +958,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1108,10 +967,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1124,8 +980,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -1134,8 +990,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="blue-status">Shipped</div></td>
             <td>
                 <a href="">View</a>
@@ -1154,10 +1010,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1166,10 +1019,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1178,10 +1028,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1194,8 +1041,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -1204,8 +1051,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="blue-status">Shipped</div></td>
             <td>
                 <a href="">View</a>
@@ -1224,10 +1071,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1236,10 +1080,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1248,10 +1089,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1264,8 +1102,8 @@ title: Active deals - Roasters
                 <div class="imgholder" data-table-toggler></div>
                 <div class="button">View Deals</div>
             </td>
-            <td data-name="id">2034</td>
-            <td data-name="deal-date">2022-02-13</td>
+            <td data-before-inline-same="ID">2034</td>
+            <td data-table-name="Deal date">2022-02-13</td>
             <td>
                 <div class="table-personal">
                     <div class="imgholder">
@@ -1274,8 +1112,8 @@ title: Active deals - Roasters
                     <p>Hummingbird</p>
                 </div>
             </td>
-            <td data-name="ware">Ware 1</td>
-            <td data-name="total">1 000</td>
+            <td data-table-name="Ware">Ware 1</td>
+            <td data-table-name="Total $">1 000</td>
             <td><div class="red-status">Payment required</div></td>
             <td>
                 <a href="">View</a>
@@ -1294,10 +1132,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1306,10 +1141,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>
@@ -1318,10 +1150,7 @@ title: Active deals - Roasters
                         <td></td>
                         <td>01</td>
                         <td>
-                            <div class="table-coffee-item">
-                                <img src="/assets/images/other/brazil.png" alt="">
-                                <span>Colibri Blend Ecoagricola NAL/NAK/NMI Late harvest 2022</span>
-                            </div>
+                            {{>table-coffee-item}}
                         </td>
                         <td>1 000</td>
                         <td>100 000</td>

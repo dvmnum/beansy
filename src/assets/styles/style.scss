@@ -12,6 +12,7 @@
 @import "tables";
 @import "container-detail";
 @import "warehouse";
+@import "auth";
 
 *, *:after, *:before {
     margin: 0;
@@ -24,6 +25,7 @@
 
 body {
     position: relative;
+    min-height: 100vh;
 
     &.fixed {
         overflow: hidden;
@@ -38,7 +40,7 @@ body {
     left: 0;
 
     background: rgba($color: $second, $alpha: 0.2);
-    z-index: 5;
+    z-index: 100;
 
     opacity: 0;
 
@@ -50,6 +52,10 @@ body {
         opacity: 1;
         pointer-events: all;
     }
+}
+
+.popup {
+    z-index: 101;
 }
 
 a {
@@ -75,9 +81,9 @@ a {
         padding: 12px;
     }
 
-    &.notify-opened {
-        width: calc(100% - 444px);
-    }
+    // &.notify-opened {
+    //     width: calc(100% - 444px);
+    // }
 
     >.red-status,
     >.green-status,
@@ -182,6 +188,10 @@ footer {
     gap: 8px;
 
     padding-top: 16px;
+
+    + h3 {
+        margin-top: 24px;
+    }
 
     a {
         font-size: 18px;
@@ -375,6 +385,10 @@ h1 {
         height: 2px;
         background: url(../images/other/path-element.svg) repeat;
         background-size: contain;
+
+        @media (max-width: $tablet) {
+            height: 1px;
+        }
     }
 
     &:before {
@@ -388,6 +402,12 @@ h1 {
 
         background-color: $semitone-grey;
         border: 1px solid $stroke-light;
+
+        @media (max-width: $tablet) {
+            width: 12px;
+            height: 12px;
+            min-width: 12px;
+        }
     }
 
     &:after {
@@ -401,6 +421,12 @@ h1 {
 
         background-color: $green;
         border: 1px solid $semitone-green;
+
+        @media (max-width: $tablet) {
+            width: 12px;
+            height: 12px;
+            min-width: 12px;
+        }
     }
 }
 
@@ -518,257 +544,63 @@ h1 {
 
 
 @media (max-width: $tablet) {
-    [data-name="roaster"] {
-        display: flex;
-        flex-direction: column;
-        
+    // [data-before-inline-same="ID"] {
+    //     display: flex;
+    //     gap: 4px;
+    //     font-weight: 500 !important;
+
+    //     &:before {
+    //         content: 'ID';
+    //         font-size: 12px;
+    //         line-height: 18px;
+    //         font-weight: 500;
+    //     }
+    // }
+
+    [data-table-name-grid] {
+        display: grid !important;
+        row-gap: 0 !important;
+        column-gap: 8px !important;
+        grid-template-columns: min-content 16px;
+        align-items: flex-start !important;
+
         &:before {
-            content: 'Roaster';
+            content: attr(data-table-name-grid);
             font-size: 10px;
             line-height: 16px;
             font-weight: 400;
             color: $second;
             margin-right: auto;
+
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+
+        .info-icon {
+            grid-column: 2;
+            grid-row: 2;
         }
     }
 
-    [data-name="id"] {
-        display: flex;
-        gap: 4px;
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'ID';
-            font-size: 12px;
-            line-height: 18px;
-            font-weight: 500;
-        }
-    }
-
-    [data-name="deal-date"] {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'Deal date';
-            font-size: 10px;
-            line-height: 16px;
-            color: $second;
-        }
-    }
-
-    [data-name="ware"] {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'Ware';
-            font-size: 12px;
-            line-height: 18px;
-            color: $second;
-        }
-    }
-
-    [data-name="total"] {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'Total';
-            font-size: 10px;
-            line-height: 16px;
-            color: $second;
-        }
-    }
-
-    [data-name="price"] {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'Price';
-            font-size: 12px;
-            line-height: 18px;
-            color: $second;
-        }
-
-        &:has(.info-icon) {
-            display: grid !important;
-            grid-template-columns: min-content 16px;
-
-            &:before {
-                grid-column: 1 / 3;
-                grid-row: 1;
-            }
-
-            .info-icon {
-                grid-column: 2;
-                grid-row: 2;
-            }
-        }
-    }
-
-    [data-name="quantity"] {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'Quantity';
-            font-size: 10px;
-            line-height: 16px;
-            color: $second;
-        }
-    }
-
-    [data-name="ico"] {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'ICO';
-            font-size: 12px;
-            line-height: 18px;
-            color: $second;
-        }
-    }
-
-    [data-name="producer"] {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'Producer';
-            font-size: 10px;
-            line-height: 16px;
-            color: $second;
-        }
-    }
-
-    [data-name="price-per-kg"] {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'Price per kg';
-            font-size: 12px;
-            line-height: 18px;
-            color: $second;
-        }
-    }
-
-    [data-name="currency"] {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'Currency';
-            font-size: 12px;
-            line-height: 18px;
-            color: $second;
-        }
-    }
-
-    [data-name="accountnumber"] {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start !important;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'Account number';
-            font-size: 12px;
-            line-height: 18px;
-            color: $second;
-        }
-    }
-    [data-name="fob"] {
-        display: flex;
-        flex-direction: column;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'FOB';
-            font-size: 10px;
-            line-height: 16px;
-            color: $second;
-        }
-    }
-    [data-name="cif"] {
-        display: flex;
-        flex-direction: column;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'CIF';
-            font-size: 10px;
-            line-height: 16px;
-            color: $second;
-        }
-    }
-    [data-name="vat"] {
+    [data-before-inline-same] {
         display: flex;
         gap: 8px;
-
-        font-weight: 500 !important;
-
-        &:before {
-            content: 'VAT';
-            font-size: 10px;
-            line-height: 16px;
-            color: $second;
-        }
-    }
-
-    [data-name="farm"] {
-        display: flex;
-        flex-direction: column;
         
         &:before {
-            content: 'Farm';
-            font-size: 10px;
-            line-height: 16px;
-            font-weight: 400;
-            color: $second;
-            margin-right: auto;
+            content: attr(data-before-inline-same);
+            font-size: inherit;
+            line-height: inherit;
+            font-weight: inherit;
+            color: inherit;
         }
     }
-
-    [data-name="ready-to-ship"] {
+    [data-table-name] {
         display: flex;
         flex-direction: column;
+        align-items: flex-start !important;
         
         &:before {
-            content: 'Ready to ship.';
+            content: attr(data-table-name);
             font-size: 10px;
             line-height: 16px;
             font-weight: 400;
@@ -776,125 +608,12 @@ h1 {
             margin-right: auto;
         }
     }
-
-    [data-name="available"] {
+    [data-table-name-inline] {
         display: flex;
-        flex-direction: column;
+        gap: 8px;
         
         &:before {
-            content: 'Available';
-            font-size: 10px;
-            line-height: 16px;
-            font-weight: 400;
-            color: $second;
-            margin-right: auto;
-        }
-    }
-
-    [data-name="prod-per"] {
-        display: flex;
-        flex-direction: column;
-        
-        &:before {
-            content: 'Prod.pr., $';
-            font-size: 10px;
-            line-height: 16px;
-            font-weight: 400;
-            color: $second;
-            margin-right: auto;
-        }
-    }
-
-    [data-name="prepay"] {
-        display: flex;
-        flex-direction: column;
-        
-        &:before {
-            content: 'Prepay';
-            font-size: 10px;
-            line-height: 16px;
-            font-weight: 400;
-            color: $second;
-            margin-right: auto;
-        }
-    }
-
-    [data-name="importer"] {
-        display: flex;
-        flex-direction: column;
-        
-        &:before {
-            content: 'Importer';
-            font-size: 10px;
-            line-height: 16px;
-            font-weight: 400;
-            color: $second;
-            margin-right: auto;
-        }
-    }
-
-    [data-name="exporter"] {
-        display: flex;
-        flex-direction: column;
-        
-        &:before {
-            content: 'Exporter';
-            font-size: 10px;
-            line-height: 16px;
-            font-weight: 400;
-            color: $second;
-            margin-right: auto;
-        }
-    }
-
-    [data-name="country"] {
-        display: flex;
-        flex-direction: column;
-        
-        &:before {
-            content: 'Country';
-            font-size: 10px;
-            line-height: 16px;
-            font-weight: 400;
-            color: $second;
-            margin-right: auto;
-        }
-    }
-
-    [data-name="pr-deadline"] {
-        display: flex;
-        flex-direction: column;
-        
-        &:before {
-            content: 'Pr.deadline';
-            font-size: 10px;
-            line-height: 16px;
-            font-weight: 400;
-            color: $second;
-            margin-right: auto;
-        }
-    }
-
-    [data-name="company-address"] {
-        display: flex;
-        flex-direction: column;
-        
-        &:before {
-            content: 'Company legal address';
-            font-size: 10px;
-            line-height: 16px;
-            font-weight: 400;
-            color: $second;
-            margin-right: auto;
-        }
-    }
-
-    [data-name="company-tel"] {
-        display: flex;
-        flex-direction: column;
-        
-        &:before {
-            content: 'Company tel.';
+            content: attr(data-table-name-inline);
             font-size: 10px;
             line-height: 16px;
             font-weight: 400;

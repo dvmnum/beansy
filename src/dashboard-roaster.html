@@ -1,0 +1,576 @@
+---
+layout: dashboard-roaster
+title: Dashboard - Roaster
+---
+
+<div class="main">
+    <h1>Dashboard</h1>
+    <div class="dashboard-grid-splited">
+        <div class="diagram-medium">
+            <div class="diagram-header">
+                <div class="h2">Deals</div>
+                <a class="image-link" href=""></a>
+            </div>
+            <div class="diagram-holder">
+                <div class="diagram-circle">
+                    <canvas class="diagram-chart-quadruple"></canvas>
+                    <!-- в h6 летит сумма значений ниже -->
+                    <p class="h6 lots" data-sum-holder></p>
+                    <p class="body">Всего</p>
+                </div>
+                <!--  -->
+                <div class="diagram-details lots">
+                    <ul>
+                        <!-- значения летят в data-count-holder -->
+                        <!-- на data-count'ах строится график -->
+                        <li data-count="12">
+                            <p class="subtitle">Production</p>
+                            <div class="diagram-item-color" style="background-color: #EA1F4B;"></div>
+                            <p class="h4" data-count-holder></p>
+                        </li>
+                        <li data-count="10">
+                            <p class="subtitle">Transit</p>
+                            <div class="diagram-item-color" style="background-color: #FED130"></div>
+                            <p class="h4" data-count-holder></p>
+                        </li>
+                        <li data-count="24">
+                            <p class="subtitle">SPOT</p>
+                            <div class="diagram-item-color" style="background-color: #23AF53;"></div>
+                            <p class="h4" data-count-holder></p>
+                        </li>
+                        <li data-count="1">
+                            <p class="subtitle">Producer</p>
+                            <div class="diagram-item-color" style="background-color: #20C1DF"></div>
+                            <p class="h4" data-count-holder></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="meta-item-solo">
+            <p class="subtitle">Overall balance</p>
+            <p class="h2">$ 20 049</p>
+            <p class="subtitle">13 000 ₽</p>
+        </div>
+        <div class="meta-item-solo">
+            <p class="subtitle">Reserved</p>
+            <p class="h2">$ 20 049</p>
+            <p class="subtitle">13 000 ₽</p>
+        </div>
+        <div class="meta-item-solo">
+            <p class="subtitle">Available funds</p>
+            <p class="h2">$ 20 049</p>
+            <p class="subtitle">13 000 ₽</p>
+            <div class="button">Replenish</div>
+        </div>
+    </div>
+    <div class="dashboard-buy-coffee">
+        <div class="h3">Buy coffee</div>
+        <ul>
+            <li>
+                <a href="">
+                    <div class="buy-item production"></div>
+                    <p class="h4">Local office</p>
+                    <p class="body"><span>250</span> lots</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="buy-item spot"></div>
+                    <p class="h4">SPOT</p>
+                    <p class="body"><span>250</span> lots</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="buy-item transit"></div>
+                    <p class="h4">Transit</p>
+                    <p class="body"><span>250</span> lots</p>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <div class="buy-item producer"></div>
+                    <p class="h4">Producer</p>
+                    <p class="body"><span>250</span> lots</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="dashboard-column">
+        <div class="header-space-between">
+            <h3>Container with lots</h3>
+            <a class="caption-geader-link" href="">See all</a>
+        </div>
+        <div class="dashboard-container-item" data-toggler>
+            <div class="mobile-flex">
+                <div class="blue-status">Closed</div>
+                <div class="h6">2034 from Ecoagricola</div>
+            </div>
+            <div class="container-header-path">
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/brazil.png" alt="">
+                    </div>
+                    <p class="body">Brasil</p>
+                    <p class="caption">2022-01-22</p>
+                </div>
+                <div class="path-12">
+                    <div class="path-element"></div>
+                </div>
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/russia.png" alt="">
+                    </div>
+                    <p class="body">Russia</p>
+                    <p class="caption">2022-01-22</p>
+                </div>
+            </div>
+            <div class="stat-items">
+                <div class="stat-item">
+                    <p class="body">Subtotal</p>
+                    <p class="body">109 000</p>
+                </div>
+                <div class="stat-item">
+                    <p class="body">Total</p>
+                    <p class="h6">$ 12 109 000</p>
+                </div>
+            </div>
+            <div class="dashboard-container-item-content" data-content>
+                <table class="table-big">
+                    <tr>
+                        <th>ICO</th>
+                        <th>Lot name</th>
+                        <th>Producer</th>
+                        <th>Price per kg, $</th>
+                        <th>Quantity (kg)</th>
+                        <th>Total $</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="green-status">Deal confirmed</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                </table>
+                <div class="button third">See all</div>
+            </div>
+        </div>
+        <div class="dashboard-container-item" data-toggler>
+            <div class="mobile-flex">
+                <div class="yellow-status">Confirmed</div>
+                <div class="h6">2034 from Ecoagricola</div>
+            </div>
+            <div class="container-header-path">
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/brazil.png" alt="">
+                    </div>
+                    <p class="body">Brasil</p>
+                    <p class="caption">2022-01-22</p>
+                </div>
+                <div class="path-12">
+                    <div class="path-element"></div>
+                </div>
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/russia.png" alt="">
+                    </div>
+                    <p class="body">Russia</p>
+                    <p class="caption">2022-01-22</p>
+                </div>
+            </div>
+            <div class="stat-items">
+                <div class="stat-item">
+                    <p class="body">Subtotal</p>
+                    <p class="body">109 000</p>
+                </div>
+                <div class="stat-item">
+                    <p class="body">Total</p>
+                    <p class="h6">$ 12 109 000</p>
+                </div>
+            </div>
+            <div class="dashboard-container-item-content" data-content>
+                <table class="table-big">
+                    <tr>
+                        <th>ICO</th>
+                        <th>Lot name</th>
+                        <th>Producer</th>
+                        <th>Price per kg, $</th>
+                        <th>Quantity (kg)</th>
+                        <th>Total $</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="green-status">Deal confirmed</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                </table>
+                <div class="button third">See all</div>
+            </div>
+        </div>
+        <div class="dashboard-container-item" data-toggler>
+            <div class="mobile-flex">
+                <div class="yellow-status">Custom cleared</div>
+                <div class="h6">2034 from Ecoagricola</div>
+            </div>
+            <div class="container-header-path">
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/brazil.png" alt="">
+                    </div>
+                    <p class="body">Brasil</p>
+                    <p class="caption">2022-01-22</p>
+                </div>
+                <div class="path-12">
+                    <div class="path-element"></div>
+                </div>
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/russia.png" alt="">
+                    </div>
+                    <p class="body">Russia</p>
+                    <p class="caption">2022-01-22</p>
+                </div>
+            </div>
+            <div class="stat-items">
+                <div class="stat-item">
+                    <p class="body">Subtotal</p>
+                    <p class="body">109 000</p>
+                </div>
+                <div class="stat-item">
+                    <p class="body">Total</p>
+                    <p class="h6">$ 12 109 000</p>
+                </div>
+            </div>
+            <div class="dashboard-container-item-content" data-content>
+                <table class="table-big">
+                    <tr>
+                        <th>ICO</th>
+                        <th>Lot name</th>
+                        <th>Producer</th>
+                        <th>Price per kg, $</th>
+                        <th>Quantity (kg)</th>
+                        <th>Total $</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="green-status">Deal confirmed</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                </table>
+                <div class="button third">See all</div>
+            </div>
+        </div>
+        <div class="dashboard-container-item" data-toggler>
+            <div class="mobile-flex">
+                <div class="blue-status">Closed</div>
+                <div class="h6">2034 from Ecoagricola</div>
+            </div>
+            <div class="container-header-path">
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/brazil.png" alt="">
+                    </div>
+                    <p class="body">Brasil</p>
+                    <p class="caption">2022-01-22</p>
+                </div>
+                <div class="path-12">
+                    <div class="path-element"></div>
+                </div>
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/russia.png" alt="">
+                    </div>
+                    <p class="body">Russia</p>
+                    <p class="caption">2022-01-22</p>
+                </div>
+            </div>
+            <div class="stat-items">
+                <div class="stat-item">
+                    <p class="body">Subtotal</p>
+                    <p class="body">109 000</p>
+                </div>
+                <div class="stat-item">
+                    <p class="body">Total</p>
+                    <p class="h6">$ 12 109 000</p>
+                </div>
+            </div>
+            <div class="dashboard-container-item-content" data-content>
+                <table class="table-big">
+                    <tr>
+                        <th>ICO</th>
+                        <th>Lot name</th>
+                        <th>Producer</th>
+                        <th>Price per kg, $</th>
+                        <th>Quantity (kg)</th>
+                        <th>Total $</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="green-status">Deal confirmed</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                </table>
+                <div class="button third">See all</div>
+            </div>
+        </div>
+        <div class="dashboard-container-item" data-toggler>
+            <div class="mobile-flex">
+                <div class="blue-status">Closed</div>
+                <div class="h6">2034 from Ecoagricola</div>
+            </div>
+            <div class="container-header-path">
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/brazil.png" alt="">
+                    </div>
+                    <p class="body">Brasil</p>
+                    <p class="caption">2022-01-22</p>
+                </div>
+                <div class="path-12">
+                    <div class="path-element"></div>
+                </div>
+                <div class="container-header-item">
+                    <div class="imgholder">
+                        <img src="assets/images/other/russia.png" alt="">
+                    </div>
+                    <p class="body">Russia</p>
+                    <p class="caption">2022-01-22</p>
+                </div>
+            </div>
+            <div class="stat-items">
+                <div class="stat-item">
+                    <p class="body">Subtotal</p>
+                    <p class="body">109 000</p>
+                </div>
+                <div class="stat-item">
+                    <p class="body">Total</p>
+                    <p class="h6">$ 12 109 000</p>
+                </div>
+            </div>
+            <div class="dashboard-container-item-content" data-content>
+                <table class="table-big">
+                    <tr>
+                        <th>ICO</th>
+                        <th>Lot name</th>
+                        <th>Producer</th>
+                        <th>Price per kg, $</th>
+                        <th>Quantity (kg)</th>
+                        <th>Total $</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="green-status">Deal confirmed</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                    <tr>
+                        <td data-table-name="ICO">002/2131/0023</td>
+                        <td>{{>table-coffee-item}}</td>
+                        <td data-table-name="Producer">Marcelo and Roberto Flanzer</td>
+                        <td data-table-name="Price per kg">10</td>
+                        <td data-table-name="Quantity">1 000</td>
+                        <td data-table-name="Total $">100 000</td>
+                        <td><div class="yellow-status">Confirm deal</div></td>
+                    </tr>
+                </table>
+                <div class="button third">See all</div>
+            </div>
+        </div>
+    </div>
+</div>
